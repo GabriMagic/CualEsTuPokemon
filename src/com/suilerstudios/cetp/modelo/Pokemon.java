@@ -22,7 +22,9 @@ public class Pokemon {
 	public Pokemon(String nombre) {
 
 		this.nombre = nombre;
-		File fichero = new File("");
+		File fichero = new File(getClass().getResourceAsStream("pokemons.json").toString());
+		
+		System.out.println(fichero.getAbsolutePath());
 
 	}
 
