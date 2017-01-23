@@ -6,12 +6,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-import org.json.JSONObject;
-
 public class Pokemon {
 
 	private String nombre;
-	private Tamanio tamanio;
 	private Color color;
 	private Tipo tipo;
 	private Peso peso;
@@ -26,25 +23,13 @@ public class Pokemon {
 	private boolean estado;
 	private String imagen;
 
-	public Pokemon(String nombre) {
-
-		this.nombre = nombre;
-
-		JSONObject jsonObject = new JSONObject(accederFicheroJson());
-
-			color = Color.valueOf(jsonObject.getJSONObject(nombre).getString("color").toUpperCase());
-			tamanio = Tamanio.valueOf(jsonObject.getJSONObject(nombre).getString("tamanio").toUpperCase());
-
-
-	}
-
 	public static String accederFicheroJson() {
 		String line = "";
 
 		try {
-			InputStream fis = Pokemon.class.getResourceAsStream("/com/suilerstudios/cetp/utils/pokemons.json");
-			InputStreamReader isr = new InputStreamReader(fis);
-			BufferedReader br = new BufferedReader(isr);
+			InputStream fhas = Pokemon.class.getResourceAsStream("/com/suilerstudios/cetp/utils/pokemons.json");
+			InputStreamReader hasr = new InputStreamReader(fhas);
+			BufferedReader br = new BufferedReader(hasr);
 			line = br.readLine();
 
 		} catch (FileNotFoundException e) {
@@ -57,10 +42,6 @@ public class Pokemon {
 
 	public String getNombre() {
 		return nombre;
-	}
-
-	public Tamanio getTamanio() {
-		return tamanio;
 	}
 
 	public Color getColor() {
@@ -79,27 +60,27 @@ public class Pokemon {
 		return evoluciones;
 	}
 
-	public boolean isAlas() {
+	public boolean hasAlas() {
 		return alas;
 	}
 
-	public boolean isPatas() {
+	public boolean hasPatas() {
 		return patas;
 	}
 
-	public boolean isPico() {
+	public boolean hasPico() {
 		return pico;
 	}
 
-	public boolean isOrejas() {
+	public boolean hasOrejas() {
 		return orejas;
 	}
 
-	public boolean isManchas() {
+	public boolean hasManchas() {
 		return manchas;
 	}
 
-	public boolean isCola() {
+	public boolean hasCola() {
 		return cola;
 	}
 
@@ -107,7 +88,7 @@ public class Pokemon {
 		return vuela;
 	}
 
-	public boolean isEstado() {
+	public boolean hasEstado() {
 		return estado;
 	}
 
@@ -115,4 +96,66 @@ public class Pokemon {
 		return imagen;
 	}
 
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public void setColor(Color color) {
+		this.color = color;
+	}
+
+	public void setTipo(Tipo tipo) {
+		this.tipo = tipo;
+	}
+
+	public void setPeso(Peso peso) {
+		this.peso = peso;
+	}
+
+	public void setEvoluciones(Evoluciones evoluciones) {
+		this.evoluciones = evoluciones;
+	}
+
+	public void setAlas(boolean alas) {
+		this.alas = alas;
+	}
+
+	public void setPatas(boolean patas) {
+		this.patas = patas;
+	}
+
+	public void setPico(boolean pico) {
+		this.pico = pico;
+	}
+
+	public void setOrejas(boolean orejas) {
+		this.orejas = orejas;
+	}
+
+	public void setManchas(boolean manchas) {
+		this.manchas = manchas;
+	}
+
+	public void setCola(boolean cola) {
+		this.cola = cola;
+	}
+
+	public void setVuela(boolean vuela) {
+		this.vuela = vuela;
+	}
+
+	public void setEstado(boolean estado) {
+		this.estado = estado;
+	}
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
+
+	@Override
+	public String toString() {
+		return getNombre() + ", " + getColor() + ", " + getTipo() + ", " + getPeso() + ", " + getEvoluciones() + ", "
+				+ hasAlas() + ", " + hasPatas() + ", " + hasPico() + ", " + hasOrejas() + ", " + hasManchas() + ", "
+				+ hasCola() + ", " + isVuela();
+	}
 }
