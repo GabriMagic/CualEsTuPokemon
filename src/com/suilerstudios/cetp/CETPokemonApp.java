@@ -1,5 +1,6 @@
 package com.suilerstudios.cetp;
 
+import com.suilerstudios.cetp.controller.InfoController;
 import com.suilerstudios.cetp.controller.MainController;
 
 import javafx.application.Application;
@@ -11,6 +12,7 @@ public class CETPokemonApp extends Application{
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 
+		
 		MainController main = new MainController();
 		
 		primaryStage.setTitle("¿Cuál es tu Pokémon?");

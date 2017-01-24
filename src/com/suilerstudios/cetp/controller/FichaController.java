@@ -13,7 +13,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-	import javafx.scene.layout.VBox;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
 
 	public class FichaController implements Initializable{ 
 
@@ -28,10 +29,11 @@ import javafx.scene.image.ImageView;
 
 	    private Pokemon pokemon;
 	   
-	    public FichaController(Pokemon pokemon) {
+	    private InfoController info;
+	    public FichaController(Pokemon pokemon, InfoController info) {
 		
 	    	this.pokemon = pokemon;
-	    	
+	    	this.info = info;
 			try {
 				FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/FichaView.fxml"));
 				loader.setController(this);
@@ -53,7 +55,18 @@ import javafx.scene.image.ImageView;
 			
 		}
 
+	    @FXML
+	    void onFichaMouseEntered(MouseEvent event) {
 
+	    	info.bind(pokemon);
+	    	//System.out.println("entrando "+pokemon.getNombre());
+	    }
+
+	    @FXML
+	    void onFichaMouseReleased(MouseEvent event) {
+	    	System.out.println("click "+pokemon.getNombre());
+
+	    }
 		public VBox getView() {
 			return view;
 		}
