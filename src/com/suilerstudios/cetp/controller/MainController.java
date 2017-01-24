@@ -1,13 +1,10 @@
 package com.suilerstudios.cetp.controller;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.suilerstudios.cetp.modelo.JsonFinder;
 import com.suilerstudios.cetp.modelo.Pokemon;
-
-import javafx.fxml.FXMLLoader;
 
 public class MainController {
 
@@ -16,7 +13,7 @@ public class MainController {
 	List<Pokemon> poke;
 	List<FichaController> fichas;
 	
-	public MainController() {
+	public MainController() {	
 		JsonFinder.generarListaPokemon();
 		tablero = new TableroController();
 		fichas = new ArrayList<>();

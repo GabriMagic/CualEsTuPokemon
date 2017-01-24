@@ -12,7 +12,9 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class JsonFinder {
+	
 	private static List<Pokemon> pokes;
+	
 	public static String accederFicheroJson() {
 		String line = "";
 

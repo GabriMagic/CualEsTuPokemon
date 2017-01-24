@@ -1,9 +1,6 @@
 package com.suilerstudios.cetp;
 
-import com.suilerstudios.cetp.controller.FichaController;
 import com.suilerstudios.cetp.controller.MainController;
-import com.suilerstudios.cetp.controller.TableroController;
-import com.suilerstudios.cetp.modelo.Pokemon;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -16,6 +13,7 @@ public class CETPokemonApp extends Application{
 
 		MainController main = new MainController();
 		
+		primaryStage.setTitle("¿Cuál es tu Pokémon?");
 		primaryStage.setScene(new Scene(main.getTablero().getMain()));
 		primaryStage.show();
 		
