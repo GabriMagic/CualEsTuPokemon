@@ -15,7 +15,6 @@ public class Pokemon {
 	private boolean cola;
 	private boolean vuela;
 	private boolean estado;
-	private String imagen;
 
 
 	public String getNombre() {
@@ -70,9 +69,7 @@ public class Pokemon {
 		return estado;
 	}
 
-	public String getImagen() {
-		return imagen;
-	}
+
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
@@ -126,9 +123,6 @@ public class Pokemon {
 		this.estado = estado;
 	}
 
-	public void setImagen(String imagen) {
-		this.imagen = imagen;
-	}
 
 	@Override
 	public String toString() {
