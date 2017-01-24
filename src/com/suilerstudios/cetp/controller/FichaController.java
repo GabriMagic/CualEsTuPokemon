@@ -11,7 +11,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-	import javafx.scene.image.ImageView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 	import javafx.scene.layout.VBox;
 
 	public class FichaController implements Initializable{ 
@@ -41,6 +42,7 @@ import javafx.scene.control.Label;
 			}
 			
 			nomPokemon.textProperty().set(pokemon.getNombre());
+			imgPokemon.imageProperty().set(new Image(getClass().getResource("../img/"+pokemon.getCodigoPokemon()+".png").toExternalForm()));
 			
 		}
 

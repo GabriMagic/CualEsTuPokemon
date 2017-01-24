@@ -51,6 +51,7 @@ public class JsonFinder {
 			poke.setPico(p.getBoolean("pico"));
 			poke.setOrejas(p.getBoolean("orejas"));
 			poke.setManchas(p.getBoolean("manchas"));
+			poke.setCodigoPokemon(p.getInt("codigo"));
 			pokes.add(poke);
 		}
 

@@ -23,10 +23,12 @@ public class MainController {
 			
 			fichas.add(new FichaController(poke.get(i)));
 			
+			
 		}
 		
 		for (int i = 0; i < fichas.size(); i++) {
 			tablero.getMain().getChildren().add(fichas.get(i).getView());
+			
 		}
 		
 		

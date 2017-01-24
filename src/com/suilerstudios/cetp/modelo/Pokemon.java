@@ -2,6 +2,7 @@ package com.suilerstudios.cetp.modelo;
 
 public class Pokemon {
 
+	private int codigoPokemon;
 	private String nombre;
 	private Color color;
 	private Tipo tipo;
@@ -16,6 +17,12 @@ public class Pokemon {
 	private boolean vuela;
 	private boolean estado;
 
+	public int getCodigoPokemon() {
+		return codigoPokemon;
+	}
+	public void setCodigoPokemon(int codigoPokemon) {
+		this.codigoPokemon = codigoPokemon;
+	}
 
 	public String getNombre() {
 		return nombre;
