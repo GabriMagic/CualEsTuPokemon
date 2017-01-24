@@ -5,18 +5,25 @@ import com.suilerstudios.cetp.controller.MainController;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class CETPokemonApp extends Application{
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 
+		primaryStage.initStyle(StageStyle.TRANSPARENT);
+		MainController main = new MainController(primaryStage);
+		Scene pokemon = new Scene(main.getVentana().getRoot());
+		pokemon.setFill(Color.TRANSPARENT);
 		
-		MainController main = new MainController();
 		
 		primaryStage.setTitle("¿Cuál es tu Pokémon?");
-		primaryStage.setScene(new Scene(main.getTablero().getMain()));
+		primaryStage.setResizable(false);
+		
+		primaryStage.setScene(pokemon);
 		primaryStage.show();
 		
 	}

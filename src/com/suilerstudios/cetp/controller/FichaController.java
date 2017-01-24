@@ -29,11 +29,14 @@ import javafx.scene.layout.VBox;
 
 	    private Pokemon pokemon;
 	   
+	    private int estado;
+	    
 	    private InfoController info;
 	    public FichaController(Pokemon pokemon, InfoController info) {
 		
 	    	this.pokemon = pokemon;
 	    	this.info = info;
+	    	estado=0;
 			try {
 				FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/FichaView.fxml"));
 				loader.setController(this);
@@ -66,6 +69,16 @@ import javafx.scene.layout.VBox;
 	    void onFichaMouseReleased(MouseEvent event) {
 	    	System.out.println("click "+pokemon.getNombre());
 
+	    	if (estado!=3) {
+				if(estado == 1){
+					estado=0;
+				}else if(estado == 0){
+					estado=1;
+				}
+	    		
+	    		
+			}
+	    	
 	    }
 		public VBox getView() {
 			return view;

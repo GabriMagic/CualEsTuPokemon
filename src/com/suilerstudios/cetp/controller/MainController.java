@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 public class MainController {
 
 	
-	private TableroController tablero;
+	private VentanaPrincipalController ventana;
 	private List<Pokemon> poke;
 	private List<FichaController> fichas;
 	private Stage secondStage;
@@ -20,16 +20,14 @@ public class MainController {
 	private InfoController info;
 	
 	
-	public MainController() {	
+	public MainController(Stage primaryStage) {	
 		JsonFinder.generarListaPokemon();
 		info = new InfoController();
-		tablero = new TableroController();
+		ventana = new VentanaPrincipalController(primaryStage);
 		fichas = new ArrayList<>();
 		poke = JsonFinder.getPokes();
 		secondStage = new Stage();
-		
 
-	
 		
 		for (int i = 0; i < poke.size(); i++) {
 			
@@ -39,7 +37,7 @@ public class MainController {
 		}
 		
 		for (int i = 0; i < fichas.size(); i++) {
-			tablero.getMain().getChildren().add(fichas.get(i).getView());
+			ventana.getTablero().getMain().getChildren().add(fichas.get(i).getView());
 			
 		}
 		
@@ -51,7 +49,11 @@ public class MainController {
 		secondStage.show();
 	}
 
+	
 	public TableroController getTablero() {
-		return tablero;
+		return ventana.getTablero();
+	}
+	public VentanaPrincipalController getVentana() {
+		return ventana;
 	}
 }

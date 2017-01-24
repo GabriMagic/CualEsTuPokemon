@@ -5,8 +5,9 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox fx:id="view" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#onFichaMouseEntered" onMouseReleased="#onFichaMouseReleased" prefHeight="185.0" prefWidth="168.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="view" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#onFichaMouseEntered" onMouseReleased="#onFichaMouseReleased" prefHeight="185.0" prefWidth="168.0" style="-fx-background-color: #22313F; -fx-border-color: black;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane prefHeight="175.0" prefWidth="168.0" VBox.vgrow="ALWAYS">
          <children>
@@ -17,6 +18,9 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <Label fx:id="nomPokemon" alignment="CENTER" contentDisplay="CENTER" prefHeight="21.0" prefWidth="223.0" text="Label" />
+      <Label fx:id="nomPokemon" alignment="CENTER" contentDisplay="CENTER" prefHeight="21.0" prefWidth="223.0" style="-fx-background-color: white;" text="Label" textFill="#0a0a0a">
+         <font>
+            <Font name="Georgia Bold" size="15.0" />
+         </font></Label>
    </children>
 </VBox>
