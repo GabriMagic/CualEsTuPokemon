@@ -1,26 +1,38 @@
-package com.suilerstudios.cetp.test;
+package com.suilerstudios.cetp.modelo;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.junit.Test;
 
-import com.suilerstudios.cetp.modelo.Color;
-import com.suilerstudios.cetp.modelo.Evoluciones;
-import com.suilerstudios.cetp.modelo.JsonFinder;
-import com.suilerstudios.cetp.modelo.Peso;
-import com.suilerstudios.cetp.modelo.Pokemon;
-import com.suilerstudios.cetp.modelo.Tipo;
+public class JsonFinder {
+	private static List<Pokemon> pokes;
+	public static String accederFicheroJson() {
+		String line = "";
 
-public class jUnitTest {
+		try {
+			InputStream fhas = Pokemon.class.getResourceAsStream("/com/suilerstudios/cetp/utils/pokemons.json");
+			InputStreamReader hasr = new InputStreamReader(fhas);
+			BufferedReader br = new BufferedReader(hasr);
+			line = br.readLine();
 
-	@Test
-	public void test() {
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return line;
+	}
 
-		List<Pokemon> pokes = new ArrayList<>();
-		
+	public static void generarListaPokemon() {
+		 pokes = new ArrayList<>();
+
 		JSONObject jsonObject = new JSONObject(JsonFinder.accederFicheroJson());
 		JSONArray pokemons = jsonObject.getJSONArray("Pokemons");
 
@@ -39,8 +51,10 @@ public class jUnitTest {
 			poke.setManchas(p.getBoolean("manchas"));
 			pokes.add(poke);
 		}
-		
-		System.out.println(pokes);
-	}
 
+		
+	}
+public static List<Pokemon> getPokes() {
+	return pokes;
+}
 }

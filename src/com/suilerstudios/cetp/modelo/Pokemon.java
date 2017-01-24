@@ -23,22 +23,6 @@ public class Pokemon {
 	private boolean estado;
 	private String imagen;
 
-	public static String accederFicheroJson() {
-		String line = "";
-
-		try {
-			InputStream fhas = Pokemon.class.getResourceAsStream("/com/suilerstudios/cetp/utils/pokemons.json");
-			InputStreamReader hasr = new InputStreamReader(fhas);
-			BufferedReader br = new BufferedReader(hasr);
-			line = br.readLine();
-
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return line;
-	}
 
 	public String getNombre() {
 		return nombre;
