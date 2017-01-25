@@ -1,6 +1,5 @@
 package com.suilerstudios.cetp;
 
-import com.suilerstudios.cetp.controller.InfoController;
 import com.suilerstudios.cetp.controller.MainController;
 
 import javafx.application.Application;
