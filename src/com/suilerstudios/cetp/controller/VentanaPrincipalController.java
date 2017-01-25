@@ -22,6 +22,7 @@ public class VentanaPrincipalController {
 		spacing.setPrefHeight(40);
 		spacing.setStyle("-fx-background-color: rgba(255, 0, 0, 0.8);" );
 		tablero = new TableroController();
+		tablero.getMain().setPrefSize(1080, 920);
 		movimiento = new VMBox(primaryStage);
 		movimiento.getVMBox().setPrefSize(50, 100);
 		movimiento.getVMBox().getChildren().add(0, spacing);
