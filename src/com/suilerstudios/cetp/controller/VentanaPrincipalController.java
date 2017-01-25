@@ -26,7 +26,8 @@ public class VentanaPrincipalController {
 		movimiento.getVMBox().setPrefSize(50, 100);
 		movimiento.getVMBox().getChildren().add(0, spacing);
 		root.setStyle("-fx-background-color: rgba(255, 255, 255, 0);");
-		info.getMain().setStyle("-fx-background-color: rgba(255, 255, 255, 1);");
+		info.getMain().setStyle("-fx-background-color: #22313F; ");
+		
 		root.getChildren().add(info.getMain());
 		root.getChildren().add(tablero.getMain());
 		root.getChildren().add(movimiento.getVMBox());
