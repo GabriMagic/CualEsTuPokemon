@@ -72,8 +72,10 @@ import javafx.scene.layout.VBox;
 	    	if (estado!=3) {
 				if(estado == 1){
 					estado=0;
+					imgPokemon.imageProperty().set(new Image(getClass().getResource("../img/"+pokemon.getCodigoPokemon()+".png").toExternalForm()));
 				}else if(estado == 0){
 					estado=1;
+					imgPokemon.imageProperty().set(new Image(getClass().getResource("../img/"+pokemon.getCodigoPokemon()+"Silueta.png").toExternalForm()));
 				}
 	    		
 	    		
