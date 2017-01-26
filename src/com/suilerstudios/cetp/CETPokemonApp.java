@@ -16,6 +16,7 @@ public class CETPokemonApp extends Application{
 		primaryStage.initStyle(StageStyle.TRANSPARENT);
 		MainController main = new MainController(primaryStage);
 		Scene pokemon = new Scene(main.getVentana().getRoot());
+		System.out.println("Inicio");
 		pokemon.setFill(Color.TRANSPARENT);
 		
 		
