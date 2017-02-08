@@ -1,5 +1,6 @@
 package com.suilerstudios.cetp.controller;
 
+import java.awt.Color;
 import java.io.IOException;
 
 import com.suilerstudios.cetp.modelo.Pokemon;
@@ -70,6 +71,8 @@ public class InfoController {
 
 	public void bind(Pokemon pokemon) {
 
+	
+		
 		nombreLabel.textProperty().set(pokemon.getNombre());
 		pokemonImagen.imageProperty().set(
 				new Image(getClass().getResource("../img/" + pokemon.getCodigoPokemon() + ".png").toExternalForm()));

@@ -7,6 +7,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <GridPane fx:id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
   <columnConstraints>
@@ -28,31 +29,34 @@
     <RowConstraints maxHeight="129.0" minHeight="0.0" prefHeight="44.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Label prefHeight="21.0" prefWidth="44.0" text="Color:" GridPane.columnIndex="1" />
-      <Label text="Evoluciones:" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-      <Label text="Patas:" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-      <Label prefHeight="21.0" prefWidth="34.0" text="Tipo:" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-      <Label prefHeight="21.0" text="Peso:" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-      <Label text="Alas:" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-      <Label text="Vuela:" GridPane.columnIndex="1" GridPane.rowIndex="10" />
-      <Label text="Pico:" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-      <Label text="Orejas:" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-      <Label text="Manchas:" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-      <Label text="Cola:" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-      <Label fx:id="colorLabel" text="Label" GridPane.columnIndex="2" />
-      <Label fx:id="tipoLabel" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-      <Label fx:id="pesoLabel" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-      <Label fx:id="evolucionesLabel" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-      <Label fx:id="alasLabel" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-      <Label fx:id="patasLabel" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-      <Label fx:id="picoLabel" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-      <Label fx:id="orejasLabel" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-      <Label fx:id="manchasLabel" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="8" />
-      <Label fx:id="colaLabel" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="9" />
-      <Label fx:id="vuelaLabel" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+      <Label prefHeight="21.0" prefWidth="44.0" text="Color:" textFill="WHITE" GridPane.columnIndex="1" />
+      <Label text="Evoluciones:" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Label text="Patas:" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+      <Label prefHeight="21.0" prefWidth="34.0" text="Tipo:" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Label prefHeight="21.0" text="Peso:" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Label text="Alas:" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <Label text="Vuela:" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+      <Label text="Pico:" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+      <Label text="Orejas:" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+      <Label text="Manchas:" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+      <Label text="Cola:" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+      <Label fx:id="colorLabel" text="Label" textFill="WHITE" GridPane.columnIndex="2" />
+      <Label fx:id="tipoLabel" text="Label" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      <Label fx:id="pesoLabel" text="Label" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <Label fx:id="evolucionesLabel" text="Label" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+      <Label fx:id="alasLabel" text="Label" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+      <Label fx:id="patasLabel" text="Label" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+      <Label fx:id="picoLabel" text="Label" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+      <Label fx:id="orejasLabel" text="Label" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+      <Label fx:id="manchasLabel" text="Label" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+      <Label fx:id="colaLabel" text="Label" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+      <Label fx:id="vuelaLabel" text="Label" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="10" />
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.halignment="CENTER" GridPane.rowSpan="11" GridPane.valignment="CENTER">
          <children>
-            <Label fx:id="nombreLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="21.0" prefWidth="248.0" text="Label" textAlignment="CENTER" />
+            <Label fx:id="nombreLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="21.0" prefWidth="248.0" text="Label" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="33.0" />
+               </font></Label>
             <ImageView fx:id="pokemonImagen" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/15.png" />
