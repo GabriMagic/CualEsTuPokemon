@@ -10,7 +10,7 @@ public class Partida {
 	private boolean Final = false;
 	private Semaphore mutexTurno;
 	private Scanner teclado;
-	
+
 	public Partida() {
 		teclado = new Scanner(System.in);
 		mutexTurno = new Semaphore(1);
@@ -19,17 +19,16 @@ public class Partida {
 		// IA
 		j2 = new IA();
 
-//		j2.setPokemon(JsonFinder.getPokes().get((int) Math.floor(Math.random() * 24)));
+		// j2.setPokemon(JsonFinder.getPokes().get((int)
+		// Math.floor(Math.random() * 24)));
 		j2.setPokemon(JsonFinder.getPokes().get(14));
-
-		System.out.println(j2.getPokemon() + "\n" + j2.comprobarAlas(true));
 
 		/**
 		 * elegir poke
 		 */
 		try {
 			mutexTurno.acquire();
-			j1.setPokemon(JsonFinder.getPokes().get(teclado.nextInt()-1));
+			j1.setPokemon(JsonFinder.getPokes().get(teclado.nextInt() - 1));
 			mutexTurno.release();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -39,25 +38,26 @@ public class Partida {
 			try {
 				// JUGADOR
 				mutexTurno.acquire();
-				System.out.println("J1: Elegí a "+j1.getPokemon().getNombre());
-				
-				j2.comprobarDato(Color.AZUL);
-				j2.comprobarDato(Evoluciones.NINGUNA);
-				j2.comprobarDato(Peso.LIGERO);
+				System.out.println("J1: Elegí a " + j1.getPokemon().getNombre());
+
+				System.out.println(j2.comprobarDato("alas", true));
+				System.out.println(j2.comprobarDato("tipo", Tipo.AGUA));
+				System.out.println(j2.comprobarDato("color", Color.VIOLETA));
+				System.out.println(j2.comprobarDato("vuela", true));
 				mutexTurno.release();
-				
-				
+
 				// IA
-//				mutexTurno.acquire();
-//				System.out.println("IA: Ah si? Pues a mi me dieron a "+j2.getPokemon().getNombre());
-//				if (j1.comprobarAlas(true)) {
-//					System.out.println("J1: Si tiene");
-//				}
-//				else {
-//					System.out.println("J1: No TIENE COÑO PESADO!!");
-//				}
-//				mutexTurno.release();
-					
+				// mutexTurno.acquire();
+				// System.out.println("IA: Ah si? Pues a mi me dieron a
+				// "+j2.getPokemon().getNombre());
+				// if (j1.comprobarAlas(true)) {
+				// System.out.println("J1: Si tiene");
+				// }
+				// else {
+				// System.out.println("J1: No TIENE COÑO PESADO!!");
+				// }
+				// mutexTurno.release();
+
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

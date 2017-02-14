@@ -70,7 +70,7 @@ public class Pokemon {
 		return cola;
 	}
 
-	public boolean isVuela() {
+	public boolean canVuela() {
 		return vuela;
 	}
 
@@ -134,6 +134,6 @@ public class Pokemon {
 	public String toString() {
 		return getNombre() + ", " + getColor() + ", " + getTipo() + ", " + getPeso() + ", " + getEvoluciones() + ", "
 				+ hasAlas() + ", " + hasPatas() + ", " + hasPico() + ", " + hasOrejas() + ", " + hasManchas() + ", "
-				+ hasCola() + ", " + isVuela();
+				+ hasCola() + ", " + canVuela();
 	}
 }

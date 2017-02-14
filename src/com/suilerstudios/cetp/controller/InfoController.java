@@ -85,7 +85,7 @@ public class InfoController {
 		orejasLabel.textProperty().set(pokemon.hasOrejas() + "");
 		manchasLabel.textProperty().set(pokemon.hasManchas() + "");
 		colaLabel.textProperty().set(pokemon.hasCola() + "");
-		vuelaLabel.textProperty().set(pokemon.isVuela() + "");
+		vuelaLabel.textProperty().set(pokemon.canVuela() + "");
 
 	}
 
