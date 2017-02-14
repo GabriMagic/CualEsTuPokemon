@@ -17,6 +17,22 @@ public class Jugador {
 		return false;
 	}
 
+	public boolean comprobarDato(Object c) {
+		System.out.println(c);
+		
+		if (pokemon.getColor() == c) {
+			System.out.println("SI es "+Color.AZUL);
+		}else if (pokemon.getEvoluciones() == c) {
+			System.out.println("Si tiene"+pokemon.getEvoluciones()+" evoluciones");
+		}else if (pokemon.getPeso() == c) {
+			System.out.println("Es de peso"+pokemon.getPeso());
+		}
+		
+		
+		
+		return true;
+	}
+
 	public boolean comprobarAlas(boolean x) {
 		return x == pokemon.hasAlas();
 	}
