@@ -8,6 +8,7 @@ public class Pokemon {
 	private Tipo tipo;
 	private Peso peso;
 	private Evoluciones evoluciones;
+	
 	private boolean alas;
 	private boolean patas;
 	private boolean pico;

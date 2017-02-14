@@ -8,14 +8,16 @@ public class Jugador {
 		pokemon = new Pokemon();
 	}
 
-	private boolean comprobarDato(Object dato) {
-
-		
+	private boolean comprobarDato(String dato) {
 
 		// if () {
 		//
 		// }
 
 		return false;
+	}
+
+	public boolean comprobarAlas(boolean x) {
+		return x == pokemon.hasAlas();
 	}
 }
