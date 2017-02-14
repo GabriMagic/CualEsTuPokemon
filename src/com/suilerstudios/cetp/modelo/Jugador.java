@@ -8,4 +8,14 @@ public class Jugador {
 		pokemon = new Pokemon();
 	}
 
+	private boolean comprobarDato(Object dato) {
+
+		
+
+		// if () {
+		//
+		// }
+
+		return false;
+	}
 }

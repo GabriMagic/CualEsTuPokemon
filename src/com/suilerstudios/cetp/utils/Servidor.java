@@ -1,11 +1,9 @@
 package com.suilerstudios.cetp.utils;
 
 import java.io.DataInputStream;
-import java.io.DataOutput;
 import java.io.DataOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.Date;
 import java.util.Scanner;
 
 public class Servidor {

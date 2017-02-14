@@ -1,6 +1,5 @@
 package com.suilerstudios.cetp.controller;
 
-import java.awt.Color;
 import java.io.IOException;
 
 import com.suilerstudios.cetp.modelo.Pokemon;

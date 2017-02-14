@@ -20,6 +20,7 @@ public class Pokemon {
 	public int getCodigoPokemon() {
 		return codigoPokemon;
 	}
+
 	public void setCodigoPokemon(int codigoPokemon) {
 		this.codigoPokemon = codigoPokemon;
 	}
@@ -76,8 +77,6 @@ public class Pokemon {
 		return estado;
 	}
 
-
-
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
@@ -129,7 +128,6 @@ public class Pokemon {
 	public void setEstado(boolean estado) {
 		this.estado = estado;
 	}
-
 
 	@Override
 	public String toString() {
