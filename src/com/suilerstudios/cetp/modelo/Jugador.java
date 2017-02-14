@@ -20,4 +20,12 @@ public class Jugador {
 	public boolean comprobarAlas(boolean x) {
 		return x == pokemon.hasAlas();
 	}
+
+	public Pokemon getPokemon() {
+		return pokemon;
+	}
+
+	public void setPokemon(Pokemon pokemon) {
+		this.pokemon = pokemon;
+	}
 }
