@@ -6,22 +6,22 @@ import java.util.concurrent.Semaphore;
 public class Partida {
 
 	private Jugador j1;
-	private IA j2;
+	private IA ia;
 	private boolean Final = false;
 	private Semaphore mutexTurno;
 	private Scanner teclado;
 
 	public Partida() {
+		System.out.println("Empieza la partida");
 		teclado = new Scanner(System.in);
 		mutexTurno = new Semaphore(1);
 
 		j1 = new Jugador();
 		// IA
-		j2 = new IA();
+		ia = new IA();
 
-		// j2.setPokemon(JsonFinder.getPokes().get((int)
-		// Math.floor(Math.random() * 24)));
-		j2.setPokemon(JsonFinder.getPokes().get(14));
+//		ia.setPokemon(JsonFinder.getPokes().get((int) Math.floor(Math.random() * 24)));
+		 ia.setPokemon(JsonFinder.getPokes().get(14));
 
 		/**
 		 * elegir poke
@@ -34,17 +34,39 @@ public class Partida {
 			e.printStackTrace();
 		}
 
-		for (int i = 0; i < 1; i++) {
+		System.out.println("J1:" + j1.getPokemon().getNombre());
+		System.out.println("IA:" + ia.getPokemon().getNombre());
+		System.out.println();
+		for (int i = 0; i < 2; i++) {
 			try {
-				// JUGADOR
-				mutexTurno.acquire();
-				System.out.println("J1: Elegí a " + j1.getPokemon().getNombre());
 
-				System.out.println(j2.comprobarDato("alas", true));
-				System.out.println(j2.comprobarDato("tipo", Tipo.AGUA));
-				System.out.println(j2.comprobarDato("color", Color.VIOLETA));
-				System.out.println(j2.comprobarDato("vuela", true));
-				mutexTurno.release();
+				// TURNOS
+				switch (i % 2) {
+				case 0:
+					mutexTurno.acquire();
+					System.out.println("TURNO J1");
+
+					System.out.println(ia.comprobarDato("color", Color.AZUL));
+					System.out.println(ia.comprobarDato("color", Color.MARRON));
+					System.out.println(ia.comprobarDato("color", Color.AMARILLO));
+//					ia.comprobarDato("tipo", Tipo.AGUA);
+//					ia.comprobarDato("tipo", Tipo.ELECTRICO);
+//					ia.comprobarDato("tipo", Tipo.BICHO);
+//					ia.comprobarDato("tipo", Tipo.NINGUNO);
+					mutexTurno.release();
+					break;
+				default:
+					mutexTurno.acquire();
+					System.out.println("Turno J2");
+					mutexTurno.release();
+					break;
+				}
+
+				// if (i % 2 == 0) {
+				//
+				// } else {
+				//
+				// }
 
 				// IA
 				// mutexTurno.acquire();
