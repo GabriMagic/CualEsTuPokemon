@@ -282,7 +282,7 @@ public class IA extends Jugador {
 			break;
 		}
 		Object[][] obj =generarPregunta();
-		System.out.println("la ia pregunta: " + obj[0][0]+ "propiedad "+obj[0][1]+"?");
+		System.out.println("la ia pregunta: " + obj[0][0]+ " propiedad "+obj[0][1]+"?");
 
 	}
 

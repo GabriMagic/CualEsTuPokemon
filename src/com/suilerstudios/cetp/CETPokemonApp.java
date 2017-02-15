@@ -21,6 +21,7 @@ public class CETPokemonApp extends Application {
 		main = new MainController(primaryStage);
 		pokemon = new Scene(main.getVentana().getRoot());
 		pokemon.setFill(Color.TRANSPARENT);
+		primaryStage.setMaximized(true);
 
 		primaryStage.setTitle("¿Cuál es tu Pokémon?");
 		primaryStage.setResizable(false);
