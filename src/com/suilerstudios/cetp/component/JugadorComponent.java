@@ -13,22 +13,23 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ComboBox;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 
-public class PreguntasComponent extends VBox {
+public class JugadorComponent extends VBox {
 
 	@FXML
 	private VBox view;
 
 	@FXML
-	private ComboBox<String> c1;
+	private ImageView imagePokemon;
 
 	@FXML
-	private ComboBox<String> c2;
+	private ComboBox<String> c1, c2;
 
 	private ObservableList<String> datos;
 
-	public PreguntasComponent() {
+	public JugadorComponent() {
 
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/PreguntasView.fxml"));
