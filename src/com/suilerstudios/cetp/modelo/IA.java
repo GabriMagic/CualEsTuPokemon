@@ -281,9 +281,7 @@ public class IA extends Jugador {
 			System.out.println("CHAO PESCAO!");
 			break;
 		}
-		for (Pokemon pokemon : listaPartidaPokes) {
-		System.out.println(pokemon.getNombre());
-	}
+		System.out.println(generarPregunta());
 	}
 
 	public String generarPregunta() {
