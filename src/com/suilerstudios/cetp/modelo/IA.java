@@ -17,7 +17,6 @@ public class IA extends Jugador {
 
 		System.out.println("PREGUNTO " + dato + " " + c + "\n\n");
 		boolean x = true;
-		Object aux = c;
 
 		switch (dato) {
 		case "color":
@@ -129,7 +128,11 @@ public class IA extends Jugador {
 
 	private void comprobarPokemon(Pokemon poke) {
 
-		
+		if (poke == getPokemon()) {
+			System.out.println("has ganado");
+		}else{
+			System.out.println("has perdido");
+		}
 		
 	}
 
