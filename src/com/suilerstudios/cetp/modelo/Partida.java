@@ -47,7 +47,8 @@ public class Partida {
 					// ia.comprobarDato("tipo", Tipo.ELECTRICO);
 					// ia.comprobarDato("tipo", Tipo.BICHO);
 					// ia.comprobarDato("tipo", Tipo.NINGUNO);
-
+					 ia.comprobarDato("evoluciones", Evoluciones.DOS);
+					 ia.comprobarDato("orejas", true);
 					break;
 				default:
 

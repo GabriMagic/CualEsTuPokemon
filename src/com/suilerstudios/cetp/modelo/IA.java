@@ -23,6 +23,7 @@ public class IA extends Jugador {
 		case "color":
 			if (getPokemon().getColor() == c) {
 				x = true;
+//				System.out.println(x);
 				flitrarPokemons(dato, c, x);
 			} else {
 				x = false;
