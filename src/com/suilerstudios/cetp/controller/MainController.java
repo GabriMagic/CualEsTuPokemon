@@ -33,7 +33,7 @@ public class MainController {
 		Partida p = new Partida();
 	}
 
-	public TableroController getTablero() {
+	public TableroFichasController getTablero() {
 		return ventana.getTablero();
 	}
 

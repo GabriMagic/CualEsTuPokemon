@@ -6,14 +6,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.FlowPane;
 
-public class TableroController {
+public class TableroFichasController {
 
     @FXML
     private FlowPane main;
 
     
     
-    public TableroController() {
+    public TableroFichasController() {
 
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/TableroView.fxml"));

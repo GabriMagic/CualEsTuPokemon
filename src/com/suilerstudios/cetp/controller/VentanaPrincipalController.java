@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 public class VentanaPrincipalController {
 
 	private HBox root;
-	private TableroController tablero;
+	private TableroFichasController tablero;
 	private VMBox movimiento;
 	private InfoController info;
 	private JugadorComponent jugadorComponent;
@@ -24,7 +24,7 @@ public class VentanaPrincipalController {
 		spacing.setPrefWidth(50);
 		spacing.setPrefHeight(40);
 		spacing.setStyle("-fx-background-color: rgba(255, 0, 0, 0.8);");
-		tablero = new TableroController();
+		tablero = new TableroFichasController();
 		tablero.getMain().setPrefSize(840, 616);
 		movimiento = new VMBox(primaryStage);
 		movimiento.getVMBox().setPrefSize(50, 100);
@@ -42,7 +42,7 @@ public class VentanaPrincipalController {
 
 	}
 
-	public TableroController getTablero() {
+	public TableroFichasController getTablero() {
 		return tablero;
 	}
 
