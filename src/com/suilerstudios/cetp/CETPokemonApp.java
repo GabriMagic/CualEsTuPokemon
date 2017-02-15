@@ -26,7 +26,7 @@ public class CETPokemonApp extends Application {
 		primaryStage.setResizable(false);
 
 		primaryStage.setScene(pokemon);
-//		primaryStage.show();
+		primaryStage.show();
 	}
 
 	public static void main(String[] args) {
