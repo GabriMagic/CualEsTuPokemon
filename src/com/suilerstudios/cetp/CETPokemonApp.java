@@ -12,7 +12,6 @@ public class CETPokemonApp extends Application {
 
 	private MainController main;
 	private Scene pokemon;
-	// private PartidaController partidaController;
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -22,7 +21,6 @@ public class CETPokemonApp extends Application {
 		pokemon = new Scene(main.getVentana().getRoot());
 		pokemon.setFill(Color.TRANSPARENT);
 		primaryStage.initStyle(StageStyle.DECORATED);
-		
 
 		primaryStage.setTitle("¿Cuál es tu Pokémon?");
 		primaryStage.setResizable(true);
