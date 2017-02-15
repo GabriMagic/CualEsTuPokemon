@@ -112,7 +112,8 @@ public class IA extends Jugador {
 			flitrarPokemons(dato, c, x);
 			break;
 		case "pokemon":
-
+			Pokemon poke = (Pokemon) c;
+			comprobarPokemon(poke);
 			break;
 		default:
 			System.out.println("CHAO PESCAO!");
@@ -124,6 +125,12 @@ public class IA extends Jugador {
 		}*/
 		
 		return x;
+	}
+
+	private void comprobarPokemon(Pokemon poke) {
+
+		
+		
 	}
 
 	private void flitrarPokemons(String dato, Object c, boolean x) {
