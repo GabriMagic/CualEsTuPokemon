@@ -1,6 +1,7 @@
 package com.suilerstudios.cetp.modelo;
 
 import java.util.ConcurrentModificationException;
+import java.util.Iterator;
 import java.util.List;
 
 public class IA extends Jugador {
@@ -78,9 +79,9 @@ public class IA extends Jugador {
 			break;
 		}
 		
-		for (Pokemon pokemon : listaPartidaPokes) {
+		/*for (Pokemon pokemon : listaPartidaPokes) {
 			System.out.println(pokemon.getNombre());
-		}
+		}*/
 		
 		return x;
 	}
@@ -88,31 +89,18 @@ public class IA extends Jugador {
 	private void flitrarPokemons(String dato, Object c, boolean x) {
 		switch (dato) {
 		case "color":
-//			try {
-//				for (Pokemon pokemon : JsonFinder.getPokes()) {
-//					if (pokemon.getColor() == c && x) {
-//						listaPartidaPokes.remove(pokemon);
-//					}
-//				}
-//			} catch (ConcurrentModificationException e) {
-//				System.out.println("404");
-//			}
-			
-			try {
-				for (int i = 0; i < listaPartidaPokes.size(); i++) {
-					System.out.println(listaPartidaPokes.get(i));
-					if (listaPartidaPokes.get(i).getColor() == c && !x) {
-						System.out.println("Eliminando a "+listaPartidaPokes.get(i));
-						listaPartidaPokes.remove(listaPartidaPokes.get(i));
-					} else if (listaPartidaPokes.get(i).getColor() != c && x) {
-						listaPartidaPokes.remove(i);
-					}
+			Iterator<Pokemon> it = listaPartidaPokes.iterator();
+			for (int i = 0; i < listaPartidaPokes.size(); i++) {
+				if (listaPartidaPokes.get(i).getColor() != (Color) c && x) {
+					/*listaPartidaPokes.remove(i);*/
+					Pokemon poke = it.next();
+					System.out.println("eliminando "+poke.getNombre());
+					it.remove();
+					
+				} else if (listaPartidaPokes.get(i).getColor() == (Color) c && !x) {
+					listaPartidaPokes.remove(i);
 				}
-
-			} catch (ConcurrentModificationException e) {
-				System.out.println("404");
 			}
-
 			
 			break;
 		case "tipo":
@@ -166,6 +154,9 @@ public class IA extends Jugador {
 			System.out.println("CHAO PESCAO!");
 			break;
 		}
+		for (Pokemon pokemon : listaPartidaPokes) {
+		System.out.println(pokemon.getNombre());
+	}
 	}
 
 	public String generarPregunta() {
