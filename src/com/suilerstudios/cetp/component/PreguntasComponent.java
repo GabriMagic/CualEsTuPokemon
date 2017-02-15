@@ -31,7 +31,7 @@ public class PreguntasComponent extends VBox {
 	public PreguntasComponent() {
 
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/view.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/PreguntasView.fxml"));
 			loader.setController(this);
 			view = loader.load();
 		} catch (IOException e) {
@@ -85,49 +85,11 @@ public class PreguntasComponent extends VBox {
 				}
 				c2.setValue(c2.getItems().get(0));
 				break;
-			case "alas":
-				c2.getItems().removeAll(c2.getItems());
-				c2.getItems().add("Si");
-				c2.getItems().add("No");
-				c2.setValue(c2.getItems().get(0));
-				break;
-			case "patas":
-				c2.getItems().removeAll(c2.getItems());
-				c2.getItems().add("Si");
-				c2.getItems().add("No");
-				c2.setValue(c2.getItems().get(0));
-				break;
-			case "pico":
-				c2.getItems().removeAll(c2.getItems());
-				c2.getItems().add("Si");
-				c2.getItems().add("No");
-				c2.setValue(c2.getItems().get(0));
-				break;
-			case "orejas":
-				c2.getItems().removeAll(c2.getItems());
-				c2.getItems().add("Si");
-				c2.getItems().add("No");
-				c2.setValue(c2.getItems().get(0));
-				break;
-			case "manchas":
-				c2.getItems().removeAll(c2.getItems());
-				c2.getItems().add("Si");
-				c2.getItems().add("No");
-				c2.setValue(c2.getItems().get(0));
-				break;
-			case "cola":
-				c2.getItems().removeAll(c2.getItems());
-				c2.getItems().add("Si");
-				c2.getItems().add("No");
-				c2.setValue(c2.getItems().get(0));
-				break;
-			case "vuela":
-				c2.getItems().removeAll(c2.getItems());
-				c2.getItems().add("Si");
-				c2.getItems().add("No");
-				c2.setValue(c2.getItems().get(0));
-				break;
 			default:
+				c2.getItems().removeAll(c2.getItems());
+				c2.getItems().add("Si");
+				c2.getItems().add("No");
+				c2.setValue(c2.getItems().get(0));
 				break;
 			}
 		});
