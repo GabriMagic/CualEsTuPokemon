@@ -32,8 +32,10 @@ public class IA extends Jugador {
 		case "tipo":
 			if (getPokemon().getTipo() == c) {
 				x = true;
+				flitrarPokemons(dato, c, x);
 			} else {
 				x = false;
+				flitrarPokemons(dato, c, x);
 			}
 			break;
 		case "peso":
@@ -87,30 +89,36 @@ public class IA extends Jugador {
 	}
 
 	private void flitrarPokemons(String dato, Object c, boolean x) {
+		Iterator<Pokemon> it = listaPartidaPokes.iterator();
 		switch (dato) {
 		case "color":
-			Iterator<Pokemon> it = listaPartidaPokes.iterator();
-			for (int i = 0; i < listaPartidaPokes.size(); i++) {
-				if (listaPartidaPokes.get(i).getColor() != (Color) c && x) {
-					/*listaPartidaPokes.remove(i);*/
-					Pokemon poke = it.next();
-					System.out.println("eliminando "+poke.getNombre());
+			
+			
+			while (it.hasNext()) {
+				Pokemon poke = it.next();
+				if ( poke.getColor() != (Color) c && x) {
+					
 					it.remove();
 					
-				} else if (listaPartidaPokes.get(i).getColor() == (Color) c && !x) {
-					listaPartidaPokes.remove(i);
+				} else if (poke.getColor() == (Color) c && !x) {
+					it.remove();
 				}
 			}
 			
 			break;
 		case "tipo":
-			for (int i = 0; i < listaPartidaPokes.size(); i++) {
-				if (listaPartidaPokes.get(i).getTipo() == c && x) {
-					listaPartidaPokes.remove(i);
-				} else if (listaPartidaPokes.get(i).getTipo() != c && !x) {
-					listaPartidaPokes.remove(i);
+
+			while (it.hasNext()) {
+				Pokemon poke = it.next();
+				if ( poke.getTipo() != (Tipo) c && x) {
+					
+					it.remove();
+					
+				} else if (poke.getTipo() == (Tipo) c && !x) {
+					it.remove();
 				}
 			}
+
 			break;
 		case "peso":
 			if (getPokemon().getPeso() == c) {
