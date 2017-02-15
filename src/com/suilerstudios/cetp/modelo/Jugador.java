@@ -9,6 +9,10 @@ public class Jugador {
 
 	}
 
+	public boolean resolver(Pokemon poke) {
+		return pokemon.equals(poke);
+	}
+
 	public Pokemon getPokemon() {
 		return pokemon;
 	}

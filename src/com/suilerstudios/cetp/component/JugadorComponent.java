@@ -12,6 +12,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
@@ -23,6 +24,9 @@ public class JugadorComponent extends HBox {
 
 	@FXML
 	private ImageView imagePokemon;
+
+	@FXML
+	private Button preguntarButton;
 
 	@FXML
 	private ComboBox<String> c1;
@@ -58,7 +62,6 @@ public class JugadorComponent extends HBox {
 		c1.setItems(datos);
 		c1.setPromptText("- Elija una opción -");
 		c1.valueProperty().addListener((observable, oldValue, newValue) -> {
-			System.out.println(newValue);
 
 			switch (c1.getValue().toLowerCase()) {
 			case "color":
@@ -97,6 +100,9 @@ public class JugadorComponent extends HBox {
 				break;
 			}
 		});
+
+		preguntarButton.disableProperty().bind(c1.valueProperty().isNull().and(c2.valueProperty().isNull()));
+
 	}
 
 	@FXML

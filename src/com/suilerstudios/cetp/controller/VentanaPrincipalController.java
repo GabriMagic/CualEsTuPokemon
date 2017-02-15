@@ -32,7 +32,7 @@ public class VentanaPrincipalController {
 		root.setStyle("-fx-background-color: rgba(255, 255, 255, 0);");
 		info.getMain().setStyle("-fx-background-color: #22313F; ");
 
-		VBox izquierda = new VBox(info.getMain(),jugadorComponent.getView());
+		VBox izquierda = new VBox(info.getMain(), jugadorComponent.getView());
 		root.getChildren().add(izquierda);
 		root.getChildren().add(tablero.getMain());
 		root.getChildren().add(movimiento.getVMBox());

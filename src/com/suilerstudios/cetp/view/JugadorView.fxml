@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.GridPane?>
 
-
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="20.0">
@@ -31,7 +30,7 @@
                <children>
                   <ComboBox fx:id="c1" prefWidth="150.0" />
                   <ComboBox fx:id="c2" prefWidth="150.0" />
-                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onPreguntar" text="Preguntar" />
+                  <Button fx:id="preguntarButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onPreguntar" text="Preguntar" />
                </children>
             </VBox>
          </children>
