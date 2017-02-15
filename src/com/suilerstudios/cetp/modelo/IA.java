@@ -23,66 +23,92 @@ public class IA extends Jugador {
 		case "color":
 			if (getPokemon().getColor() == c) {
 				x = true;
-//				System.out.println(x);
+				System.out.println("ia: "+ x);
 				flitrarPokemons(dato, c, x);
 			} else {
 				x = false;
+				System.out.println("ia: "+ x);
 				flitrarPokemons(dato, c, x);
 			}
 			break;
 		case "tipo":
 			if (getPokemon().getTipo() == c) {
 				x = true;
+				System.out.println("ia: "+ x);
 				flitrarPokemons(dato, c, x);
 			} else {
 				x = false;
+				System.out.println("ia: "+ x);
 				flitrarPokemons(dato, c, x);
 			}
 			break;
 		case "peso":
 			if (getPokemon().getPeso() == c) {
 				x = true;
+				System.out.println("ia: "+ x);
+
 				flitrarPokemons(dato, c, x);
 			} else {
 				x = false;
+				System.out.println("ia: "+ x);
+
 				flitrarPokemons(dato, c, x);
 			}
 			break;
 		case "evoluciones":
 			if (getPokemon().getEvoluciones() == c) {
 				x = true;
+				System.out.println("ia: "+ x);
+
 				flitrarPokemons(dato, c, x);
 			} else {
 				x = false;
+				System.out.println("ia: "+ x);
+
 				flitrarPokemons(dato, c, x);
 			}
 			break;
 		case "alas":
 			x = ((boolean) c == getPokemon().hasAlas());
+			System.out.println("ia: "+ x);
+
 			flitrarPokemons(dato, c, x);
+			
 			break;
 		case "patas":
 			x = ((boolean) c == getPokemon().hasPatas());
+			System.out.println("ia: "+ x);
+
 			flitrarPokemons(dato, c, x);
 			break;
 		case "pico":
 			x = ((boolean) c == getPokemon().hasPico());
+			System.out.println("ia: "+ x);
+
 			flitrarPokemons(dato, c, x);
 			break;
 		case "orejas":
 			x = ((boolean) c == getPokemon().hasOrejas());
+			System.out.println("ia: "+ x);
+
 			flitrarPokemons(dato, c, x);
 			break;
 		case "manchas":
 			x = ((boolean) c == getPokemon().hasManchas());
+			System.out.println("ia: "+ x);
+
 			flitrarPokemons(dato, c, x);
 			break;
 		case "cola":
 			x = ((boolean) c == getPokemon().hasCola());
+			System.out.println("ia: "+ x);
+
 			flitrarPokemons(dato, c, x);
 			break;
 		case "vuela":
 			x = ((boolean) c == getPokemon().canVuela());
+			System.out.println("ia: "+ x);
+
 			flitrarPokemons(dato, c, x);
 			break;
 		case "pokemon":
