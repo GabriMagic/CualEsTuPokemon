@@ -41,37 +41,48 @@ public class IA extends Jugador {
 		case "peso":
 			if (getPokemon().getPeso() == c) {
 				x = true;
+				flitrarPokemons(dato, c, x);
 			} else {
 				x = false;
+				flitrarPokemons(dato, c, x);
 			}
 			break;
 		case "evoluciones":
 			if (getPokemon().getEvoluciones() == c) {
 				x = true;
+				flitrarPokemons(dato, c, x);
 			} else {
 				x = false;
+				flitrarPokemons(dato, c, x);
 			}
 			break;
 		case "alas":
 			x = ((boolean) c == getPokemon().hasAlas());
+			flitrarPokemons(dato, c, x);
 			break;
 		case "patas":
 			x = ((boolean) c == getPokemon().hasPatas());
+			flitrarPokemons(dato, c, x);
 			break;
 		case "pico":
 			x = ((boolean) c == getPokemon().hasPico());
+			flitrarPokemons(dato, c, x);
 			break;
 		case "orejas":
 			x = ((boolean) c == getPokemon().hasOrejas());
+			flitrarPokemons(dato, c, x);
 			break;
 		case "manchas":
 			x = ((boolean) c == getPokemon().hasManchas());
+			flitrarPokemons(dato, c, x);
 			break;
 		case "cola":
 			x = ((boolean) c == getPokemon().hasCola());
+			flitrarPokemons(dato, c, x);
 			break;
 		case "vuela":
 			x = ((boolean) c == getPokemon().canVuela());
+			flitrarPokemons(dato, c, x);
 			break;
 		case "pokemon":
 
@@ -121,39 +132,120 @@ public class IA extends Jugador {
 
 			break;
 		case "peso":
-			if (getPokemon().getPeso() == c) {
-				x = true;
-			} else {
-				x = false;
+			while (it.hasNext()) {
+				Pokemon poke = it.next();
+				if ( poke.getPeso() != (Peso) c && x) {
+					
+					it.remove();
+					
+				} else if (poke.getPeso() == (Peso) c && !x) {
+					it.remove();
+				}
 			}
+
 			break;
 		case "evoluciones":
-			if (getPokemon().getEvoluciones() == c) {
-				x = true;
-			} else {
-				x = false;
+			while (it.hasNext()) {
+				Pokemon poke = it.next();
+				if ( poke.getEvoluciones() != (Evoluciones) c && x) {
+					
+					it.remove();
+					
+				} else if (poke.getEvoluciones() == (Evoluciones) c && !x) {
+					it.remove();
+				}
 			}
+
 			break;
 		case "alas":
-			x = ((boolean) c == getPokemon().hasAlas());
+			while (it.hasNext()) {
+				Pokemon poke = it.next();
+				if ( poke.hasAlas() != (boolean) c && x) {
+					
+					it.remove();
+					
+				} else if (poke.hasAlas() == (boolean) c && !x) {
+					it.remove();
+				}
+			}
+
 			break;
 		case "patas":
-			x = ((boolean) c == getPokemon().hasPatas());
+			while (it.hasNext()) {
+				Pokemon poke = it.next();
+				if ( poke.hasPatas() != (boolean) c && x) {
+					
+					it.remove();
+					
+				} else if (poke.hasPatas() == (boolean) c && !x) {
+					it.remove();
+				}
+			}
+
 			break;
 		case "pico":
-			x = ((boolean) c == getPokemon().hasPico());
+			while (it.hasNext()) {
+				Pokemon poke = it.next();
+				if ( poke.hasPico() != (boolean) c && x) {
+					
+					it.remove();
+					
+				} else if (poke.hasPico() == (boolean) c && !x) {
+					it.remove();
+				}
+			}
+
 			break;
 		case "orejas":
-			x = ((boolean) c == getPokemon().hasOrejas());
+			while (it.hasNext()) {
+				Pokemon poke = it.next();
+				if ( poke.hasOrejas() != (boolean) c && x) {
+					
+					it.remove();
+					
+				} else if (poke.hasOrejas() == (boolean) c && !x) {
+					it.remove();
+				}
+			}
+
+			
 			break;
 		case "manchas":
-			x = ((boolean) c == getPokemon().hasManchas());
+			while (it.hasNext()) {
+				Pokemon poke = it.next();
+				if ( poke.hasManchas() != (boolean) c && x) {
+					
+					it.remove();
+					
+				} else if (poke.hasManchas() == (boolean) c && !x) {
+					it.remove();
+				}
+			}
+
 			break;
 		case "cola":
-			x = ((boolean) c == getPokemon().hasCola());
+			while (it.hasNext()) {
+				Pokemon poke = it.next();
+				if ( poke.hasCola() != (boolean) c && x) {
+					
+					it.remove();
+					
+				} else if (poke.hasCola() == (boolean) c && !x) {
+					it.remove();
+				}
+			}
 			break;
 		case "vuela":
-			x = ((boolean) c == getPokemon().canVuela());
+			while (it.hasNext()) {
+				Pokemon poke = it.next();
+				if ( poke.canVuela() != (boolean) c && x) {
+					
+					it.remove();
+					
+				} else if (poke.canVuela() == (boolean) c && !x) {
+					it.remove();
+				}
+			}
 			break;
 		case "pokemon":
 
