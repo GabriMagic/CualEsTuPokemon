@@ -119,7 +119,7 @@ public class JugadorComponent extends HBox {
 		return view;
 	}
 
-	public void setImagePokemon(ImageView imagePokemon) {
-		this.imagePokemon = imagePokemon;
+	public ImageView getImagePokemon() {
+		return imagePokemon;
 	}
 }

@@ -35,15 +35,14 @@ public class Partida {
 			case 0:
 
 				System.out.println("TURNO J1");
-				
-				while ( ia.getListaPartidaPokes().size()>1) {
+
+				while (ia.getListaPartidaPokes().size() > 1) {
 					Object[][] pre = ia.generarPregunta();
 					System.out.println(ia.comprobarDato(pre[0][0].toString(), pre[0][1]));
-					
+
 				}
 				ia.comprobarDato("pokemon", ia.getListaPartidaPokes().get(0));
-			
-				
+
 				// System.out.println(ia.comprobarDato("color", Color.MARRON));
 				// System.out.println(ia.comprobarDato("color",
 				// Color.AMARILLO));
@@ -61,6 +60,14 @@ public class Partida {
 			}
 
 		}
+
 	}
 
+	public IA getIa() {
+		return ia;
+	}
+
+	public Jugador getJ1() {
+		return j1;
+	}
 }
