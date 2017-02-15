@@ -67,8 +67,6 @@ public class FichaController implements Initializable {
 
 	@FXML
 	void onFichaMouseReleased(MouseEvent event) {
-		System.out.println("click " + pokemon.getNombre());
-
 		if (estado != 3) {
 			if (estado == 1) {
 				estado = 0;
