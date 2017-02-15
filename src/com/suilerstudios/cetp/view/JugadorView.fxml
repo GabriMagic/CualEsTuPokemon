@@ -37,15 +37,15 @@
 
                   <ComboBox fx:id="c1" prefWidth="150.0" />
                   <ComboBox fx:id="c2" prefWidth="150.0" />
-<<<<<<< HEAD
+
                   <Button fx:id="preguntarButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onPreguntar" text="Preguntar">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>
 
-=======
+
                   <Button fx:id="preguntarButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onPreguntar" text="Preguntar" />
->>>>>>> origin/master
+
                </children>
             </VBox>
          </children>
