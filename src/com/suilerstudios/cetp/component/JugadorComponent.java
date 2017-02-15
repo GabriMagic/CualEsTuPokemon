@@ -14,10 +14,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ComboBox;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
-public class JugadorComponent extends VBox {
-
+public class JugadorComponent extends HBox {
 	@FXML
 	private VBox view;
 
@@ -25,14 +25,17 @@ public class JugadorComponent extends VBox {
 	private ImageView imagePokemon;
 
 	@FXML
-	private ComboBox<String> c1, c2;
+	private ComboBox<String> c1;
+
+	@FXML
+	private ComboBox<String> c2;
 
 	private ObservableList<String> datos;
 
 	public JugadorComponent() {
 
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/PreguntasView.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/JugadorView.fxml"));
 			loader.setController(this);
 			view = loader.load();
 		} catch (IOException e) {
@@ -101,7 +104,16 @@ public class JugadorComponent extends VBox {
 
 	}
 
+	@FXML
+	void onResolver(ActionEvent event) {
+
+	}
+
 	public VBox getView() {
 		return view;
+	}
+
+	public void setImagePokemon(ImageView imagePokemon) {
+		this.imagePokemon = imagePokemon;
 	}
 }

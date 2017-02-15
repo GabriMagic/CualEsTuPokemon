@@ -1,7 +1,6 @@
 package com.suilerstudios.cetp.modelo;
 
 import java.util.Scanner;
-import java.util.concurrent.Semaphore;
 
 public class Partida {
 
@@ -12,7 +11,6 @@ public class Partida {
 	public Partida() {
 		System.out.println("Empieza la partida");
 		teclado = new Scanner(System.in);
-
 
 		j1 = new Jugador();
 		// IA
@@ -26,36 +24,36 @@ public class Partida {
 		 * elegir poke
 		 */
 
-			j1.setPokemon(JsonFinder.getPokes().get(teclado.nextInt() - 1));
+		
+		
+		j1.setPokemon(JsonFinder.getPokes().get(teclado.nextInt() - 1));
 
 		System.out.println("J1:" + j1.getPokemon().getNombre());
 		System.out.println("IA:" + ia.getPokemon().getNombre());
 		System.out.println();
 		for (int i = 0; i < 2; i++) {
 
+			// TURNOS
+			switch (i % 2) {
+			case 0:
 
-				// TURNOS
-				switch (i % 2) {
-				case 0:
+				System.out.println("TURNO J1");
 
-					System.out.println("TURNO J1");
+				System.out.println(ia.comprobarDato("color", Color.AZUL));
+				// System.out.println(ia.comprobarDato("color", Color.MARRON));
+				// System.out.println(ia.comprobarDato("color",
+				// Color.AMARILLO));
+				ia.comprobarDato("tipo", Tipo.AGUA);
+				// ia.comprobarDato("tipo", Tipo.ELECTRICO);
+				// ia.comprobarDato("tipo", Tipo.BICHO);
+				// ia.comprobarDato("tipo", Tipo.NINGUNO);
+				ia.comprobarDato("evoluciones", Evoluciones.DOS);
+				ia.comprobarDato("orejas", true);
+				break;
+			default:
 
-					
-					System.out.println(ia.comprobarDato("color", Color.AZUL));
-//					System.out.println(ia.comprobarDato("color", Color.MARRON));
-//					System.out.println(ia.comprobarDato("color", Color.AMARILLO));
-					 ia.comprobarDato("tipo", Tipo.AGUA);
-					// ia.comprobarDato("tipo", Tipo.ELECTRICO);
-					// ia.comprobarDato("tipo", Tipo.BICHO);
-					// ia.comprobarDato("tipo", Tipo.NINGUNO);
-					 ia.comprobarDato("evoluciones", Evoluciones.DOS);
-					 ia.comprobarDato("orejas", true);
-					break;
-				default:
-
-					break;
-				}
-
+				break;
+			}
 
 		}
 	}

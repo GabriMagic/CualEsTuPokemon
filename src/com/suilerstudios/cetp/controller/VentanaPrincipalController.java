@@ -1,8 +1,10 @@
 package com.suilerstudios.cetp.controller;
 
+import com.suilerstudios.cetp.component.JugadorComponent;
 import com.suilerstudios.moverVentanaComponent.controller.VMBox;
 
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class VentanaPrincipalController {
@@ -11,9 +13,11 @@ public class VentanaPrincipalController {
 	private TableroController tablero;
 	private VMBox movimiento;
 	private InfoController info;
+	private JugadorComponent jugadorComponent;
 
 	public VentanaPrincipalController(Stage primaryStage) {
 
+		jugadorComponent = new JugadorComponent();
 		info = new InfoController();
 		root = new HBox();
 		HBox spacing = new HBox();
@@ -27,8 +31,9 @@ public class VentanaPrincipalController {
 		movimiento.getVMBox().getChildren().add(0, spacing);
 		root.setStyle("-fx-background-color: rgba(255, 255, 255, 0);");
 		info.getMain().setStyle("-fx-background-color: #22313F; ");
-		
-		root.getChildren().add(info.getMain());
+
+		VBox izquierda = new VBox(info.getMain(),jugadorComponent.getView());
+		root.getChildren().add(izquierda);
 		root.getChildren().add(tablero.getMain());
 		root.getChildren().add(movimiento.getVMBox());
 
@@ -41,6 +46,7 @@ public class VentanaPrincipalController {
 	public HBox getRoot() {
 		return root;
 	}
+
 	public InfoController getInfo() {
 		return info;
 	}
