@@ -1,32 +1,43 @@
 package com.suilerstudios.cetp.controller;
 
-import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.layout.FlowPane;
+import com.suilerstudios.cetp.modelo.JsonFinder;
+import com.suilerstudios.cetp.modelo.Partida;
+
+import javafx.stage.Stage;
 
 public class TableroFichasController {
 
-    @FXML
-    private FlowPane main;
+	private VentanaPrincipalController ventana;
+	private List<FichaController> fichas;
 
-    
-    
-    public TableroFichasController() {
+	private InfoController info;
 
-		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/TableroView.fxml"));
-			loader.setController(this);
-			main=loader.load();
-			
-		} catch (IOException e) {
-			throw new RuntimeException(e);
-		}
+	public TableroFichasController(Stage primaryStage) {
+		JsonFinder.generarListaPokemon();
+
+		ventana = new VentanaPrincipalController(primaryStage);
+		fichas = new ArrayList<>();
+		info = ventana.getInfo();
+
+		for (int i = 0; i < JsonFinder.getPokes().size(); i++)
+			fichas.add(new FichaController(JsonFinder.getPokes().get(i), info));
+
+		for (int i = 0; i < fichas.size(); i++)
+			ventana.getTablero().getMain().getChildren().add(fichas.get(i).getView());
+
+		info.bind(fichas.get(0).getPokemon());
+		
+		Partida p = new Partida();
 	}
-    
-    public FlowPane getMain() {
-		return main;
+
+	public TableroController getTablero() {
+		return ventana.getTablero();
+	}
+
+	public VentanaPrincipalController getVentana() {
+		return ventana;
 	}
 }
-

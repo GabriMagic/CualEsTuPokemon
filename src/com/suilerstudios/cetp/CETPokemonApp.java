@@ -1,6 +1,6 @@
 package com.suilerstudios.cetp;
 
-import com.suilerstudios.cetp.controller.MainController;
+import com.suilerstudios.cetp.controller.TableroFichasController;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -10,14 +10,14 @@ import javafx.stage.StageStyle;
 
 public class CETPokemonApp extends Application {
 
-	private MainController main;
+	private TableroFichasController main;
 	private Scene pokemon;
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 
 		primaryStage.initStyle(StageStyle.TRANSPARENT);
-		main = new MainController(primaryStage);
+		main = new TableroFichasController(primaryStage);
 		pokemon = new Scene(main.getVentana().getRoot());
 		pokemon.setFill(Color.TRANSPARENT);
 
