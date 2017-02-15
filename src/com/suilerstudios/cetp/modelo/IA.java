@@ -281,52 +281,77 @@ public class IA extends Jugador {
 			System.out.println("CHAO PESCAO!");
 			break;
 		}
-		System.out.println(generarPregunta());
+		Object[][] obj =generarPregunta();
+		System.out.println(obj[0][0]);
+		System.out.println(obj[0][1]);
+
 	}
 
-	public String generarPregunta() {
+	public Object[][] generarPregunta() {
 		int pregunta = (int) Math.floor(Math.random() * 11);
-		String salida = "";
-
+		Object salida = "";
+		Object[][] obj = new Object[1][1];
 		switch (pregunta) {
 		case 1:
-			salida = Color.values()[(int) Math.floor(Math.random() * 3)].toString();
+			obj[0][0] ="color";
+			salida = Color.values()[(int) Math.floor(Math.random() * 3)];
+			obj[0][1] = salida;
 			break;
 		case 2:
-			salida = Tipo.values()[(int) Math.floor(Math.random() * 3)].toString();
+			obj[0][0] ="tipo";
+			salida = Tipo.values()[(int) Math.floor(Math.random() * 3)];
+			obj[0][1] = salida;
 			break;
 		case 3:
-			salida = Peso.values()[(int) Math.floor(Math.random() * 3)].toString();
+			obj[0][0] ="peso";
+			salida = Peso.values()[(int) Math.floor(Math.random() * 3)];
+			obj[0][1] = salida;
 			break;
 		case 4:
-			salida = Evoluciones.values()[(int) Math.floor(Math.random() * 3)].toString();
+			obj[0][0] ="evoluciones";
+			salida = Evoluciones.values()[(int) Math.floor(Math.random() * 3)];
+			obj[0][1] = salida;
 			break;
 		case 5:
-			salida = getPokemon().hasAlas() + "";
+			obj[0][0] ="alas";
+			salida = getPokemon().hasAlas();
+			obj[0][1] = salida;
 			break;
 		case 6:
-			salida = getPokemon().hasPatas() + "";
+			obj[0][0] ="patas";
+			salida = getPokemon().hasPatas();
+			obj[0][1] = salida;
 			break;
 		case 7:
-			salida = getPokemon().hasPico() + "";
+			obj[0][0] ="pico";
+			salida = getPokemon().hasPico();
+			obj[0][1] = salida;
 			break;
 		case 8:
-			salida = getPokemon().hasOrejas() + "";
+			obj[0][0] ="orejas";
+			salida = getPokemon().hasOrejas();
+			obj[0][1] = salida;
 			break;
 		case 9:
-			salida = getPokemon().hasManchas() + "";
+			obj[0][0] ="monchas";
+			salida = getPokemon().hasManchas();
+			obj[0][1] = salida;
 			break;
 		case 10:
-			salida = getPokemon().hasCola() + "";
+			obj[0][0] ="cola";
+			salida = getPokemon().hasCola() ;
+			obj[0][1] = salida;
 			break;
 		case 11:
-			salida = getPokemon().canVuela() + "";
+			obj[0][0] ="vuela";
+			salida = getPokemon().canVuela() ;
+			obj[0][1] = salida;
 			break;
 
 		default:
 			break;
 		}
-		return salida;
+		return obj;
 	}
 
 }
