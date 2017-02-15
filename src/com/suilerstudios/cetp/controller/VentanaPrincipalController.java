@@ -34,7 +34,7 @@ public class VentanaPrincipalController {
 
 		BorderPane izquierda = new BorderPane();
 		izquierda.setTop(info.getMain());
-		izquierda.setBottom(jugadorComponent.getView());
+		izquierda.setCenter(jugadorComponent.getView());
 		izquierda.setStyle("-fx-background-color: #22313F ");
 		root.getChildren().add(izquierda);
 		root.getChildren().add(tablero.getMain());

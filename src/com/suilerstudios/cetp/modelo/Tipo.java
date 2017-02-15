@@ -1,7 +1,6 @@
 package com.suilerstudios.cetp.modelo;
 
 public enum Tipo {
-	NINGUNO,
 	ACERO,
 	AGUA,
 	BICHO,

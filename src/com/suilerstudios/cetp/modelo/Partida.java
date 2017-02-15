@@ -16,16 +16,13 @@ public class Partida {
 		// IA
 		ia = new IA();
 
-		// ia.setPokemon(JsonFinder.getPokes().get((int)
-		// Math.floor(Math.random() * 24)));
-		ia.setPokemon(JsonFinder.getPokes().get(14));
+		ia.setPokemon(JsonFinder.getPokes().get((int) Math.floor(Math.random() * 24)));
+		// ia.setPokemon(JsonFinder.getPokes().get(1));
 
 		/**
 		 * elegir poke
 		 */
 
-		
-		
 		j1.setPokemon(JsonFinder.getPokes().get(teclado.nextInt() - 1));
 
 		System.out.println("J1:" + j1.getPokemon().getNombre());
@@ -38,20 +35,25 @@ public class Partida {
 			case 0:
 
 				System.out.println("TURNO J1");
-					System.out.println(JsonFinder.getPokes().get(14));
-				System.out.println(ia.comprobarDato("color", Color.AZUL));
+				
+				while ( ia.getListaPartidaPokes().size()>1) {
+					Object[][] pre = ia.generarPregunta();
+					System.out.println(ia.comprobarDato(pre[0][0].toString(), pre[0][1]));
+					
+				}
+				ia.comprobarDato("pokemon", ia.getListaPartidaPokes().get(0));
+			
+				
 				// System.out.println(ia.comprobarDato("color", Color.MARRON));
 				// System.out.println(ia.comprobarDato("color",
 				// Color.AMARILLO));
-				ia.comprobarDato("tipo", Tipo.AGUA);
+				// ia.comprobarDato("tipo", Tipo.AGUA);
 				// ia.comprobarDato("tipo", Tipo.ELECTRICO);
 				// ia.comprobarDato("tipo", Tipo.BICHO);
 				// ia.comprobarDato("tipo", Tipo.NINGUNO);
-				ia.comprobarDato("evoluciones", Evoluciones.DOS);
-				ia.comprobarDato("orejas", true);
-				ia.comprobarDato("pokemon", JsonFinder.getPokes().get(14));
+				// ia.comprobarDato("evoluciones", Evoluciones.DOS);
+				// ia.comprobarDato("orejas", true);
 
-				
 				break;
 			default:
 
