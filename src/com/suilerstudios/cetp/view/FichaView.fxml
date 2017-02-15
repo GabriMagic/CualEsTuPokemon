@@ -7,11 +7,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="view" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#onFichaMouseEntered" onMouseReleased="#onFichaMouseReleased" prefHeight="185.0" prefWidth="168.0" style="-fx-background-color: #22313F; -fx-border-color: black;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="view" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#onFichaMouseEntered" onMouseReleased="#onFichaMouseReleased" prefHeight="120.0" prefWidth="100.0" style="-fx-background-color: #22313F; -fx-border-color: black;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane prefHeight="175.0" prefWidth="168.0" VBox.vgrow="ALWAYS">
          <children>
-            <ImageView fx:id="imgPokemon" fitHeight="173.0" fitWidth="168.0" layoutX="43.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-28.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <ImageView fx:id="imgPokemon" fitHeight="120.0" fitWidth="92.0" layoutX="33.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-3.0948867797851562" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="-3.0">
                <image>
                   <Image url="@../img/15.png" />
                </image>
