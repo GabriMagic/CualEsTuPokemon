@@ -282,15 +282,14 @@ public class IA extends Jugador {
 			break;
 		}
 		Object[][] obj =generarPregunta();
-		System.out.println(obj[0][0]);
-		System.out.println(obj[0][1]);
+		System.out.println("la ia pregunta: " + obj[0][0]+ "propiedad "+obj[0][1]+"?");
 
 	}
 
 	public Object[][] generarPregunta() {
 		int pregunta = (int) Math.floor(Math.random() * 11);
 		Object salida = "";
-		Object[][] obj = new Object[1][1];
+		Object[][] obj = new Object[2][2];
 		switch (pregunta) {
 		case 1:
 			obj[0][0] ="color";
