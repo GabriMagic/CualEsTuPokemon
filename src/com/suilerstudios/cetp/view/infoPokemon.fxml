@@ -25,6 +25,11 @@
       <RowConstraints maxHeight="129.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
     <RowConstraints maxHeight="267.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="129.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
   </rowConstraints>
    <children>
       <Label alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" prefHeight="21.0" prefWidth="44.0" text="Color:" textFill="WHITE" GridPane.columnIndex="1">
@@ -113,7 +118,7 @@
                <font>
                   <Font size="33.0" />
                </font></Label>
-            <ImageView fx:id="pokemonImagen" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="pokemonImagen" fitHeight="124.0" fitWidth="112.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/15.png" />
                </image>

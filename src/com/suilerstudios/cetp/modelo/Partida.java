@@ -38,7 +38,7 @@ public class Partida {
 			case 0:
 
 				System.out.println("TURNO J1");
-
+					System.out.println(JsonFinder.getPokes().get(14));
 				System.out.println(ia.comprobarDato("color", Color.AZUL));
 				// System.out.println(ia.comprobarDato("color", Color.MARRON));
 				// System.out.println(ia.comprobarDato("color",
@@ -49,6 +49,9 @@ public class Partida {
 				// ia.comprobarDato("tipo", Tipo.NINGUNO);
 				ia.comprobarDato("evoluciones", Evoluciones.DOS);
 				ia.comprobarDato("orejas", true);
+				ia.comprobarDato("pokemon", JsonFinder.getPokes().get(14));
+
+				
 				break;
 			default:
 

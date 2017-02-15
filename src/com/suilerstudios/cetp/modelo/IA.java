@@ -1,5 +1,6 @@
 package com.suilerstudios.cetp.modelo;
 
+import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.List;
@@ -10,7 +11,8 @@ public class IA extends Jugador {
 
 	public IA() {
 		super();
-		listaPartidaPokes = JsonFinder.getPokes();
+		listaPartidaPokes = new ArrayList<>();
+		listaPartidaPokes.addAll(JsonFinder.getPokes());
 	}
 
 	public boolean comprobarDato(String dato, Object c) {
@@ -112,7 +114,7 @@ public class IA extends Jugador {
 			break;
 		case "pokemon":
 			Pokemon poke = (Pokemon) c;
-			comprobarPokemon(poke);
+			System.out.println(resolver(poke));
 			break;
 		default:
 			System.out.println("CHAO PESCAO!");
@@ -126,16 +128,7 @@ public class IA extends Jugador {
 		return x;
 	}
 
-	private void comprobarPokemon(Pokemon poke) {
-
-		if (poke == getPokemon()) {
-			System.out.println("has ganado");
-		}else{
-			System.out.println("has perdido");
-		}
-		
-	}
-
+	
 	private void flitrarPokemons(String dato, Object c, boolean x) {
 		Iterator<Pokemon> it = listaPartidaPokes.iterator();
 		switch (dato) {
