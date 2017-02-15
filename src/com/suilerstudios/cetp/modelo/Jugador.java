@@ -6,6 +6,7 @@ public class Jugador {
 
 	public Jugador() {
 		pokemon = new Pokemon();
+
 	}
 
 	public Pokemon getPokemon() {
