@@ -3,6 +3,8 @@ package com.suilerstudios.cetp.controller;
 import com.suilerstudios.cetp.component.JugadorComponent;
 import com.suilerstudios.moverVentanaComponent.controller.VMBox;
 
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
@@ -20,15 +22,17 @@ public class VentanaPrincipalController {
 		jugadorComponent = new JugadorComponent();
 		info = new InfoController();
 		root = new HBox();
-		HBox spacing = new HBox();
-		spacing.setPrefWidth(50);
-		spacing.setPrefHeight(40);
-		spacing.setStyle("-fx-background-color: rgba(255, 0, 0, 0.8);");
+
+		ImageView logo = new ImageView();
+		logo.setFitWidth(50);
+		logo.setFitHeight(50);
+		logo.setImage(new Image(getClass().getResourceAsStream("../img/logo.png")));
+
 		tablero = new TableroController();
 		tablero.getMain().setPrefSize(840, 616);
 		movimiento = new VMBox(primaryStage);
 		movimiento.getVMBox().setPrefSize(50, 100);
-		movimiento.getVMBox().getChildren().add(0, spacing);
+		movimiento.getVMBox().getChildren().add(0, logo);
 		root.setStyle("-fx-background-color: rgba(255, 255, 255, 0);");
 		info.getMain().setStyle("-fx-background-color: #22313F; ");
 
