@@ -33,15 +33,6 @@
 
                   <ComboBox fx:id="c1" maxWidth="1.7976931348623157E308" prefWidth="150.0" />
                   <ComboBox fx:id="c2" maxWidth="1.7976931348623157E308" prefWidth="150.0" />
-                  <Button fx:id="preguntarButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onPreguntar" text="Preguntar" />
-
-                  <ComboBox fx:id="c1" prefWidth="150.0" />
-                  <ComboBox fx:id="c2" prefWidth="150.0" />
-
-                  <Button fx:id="preguntarButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onPreguntar" text="Preguntar">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></Button>
 
 
                   <Button fx:id="preguntarButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onPreguntar" text="Preguntar" />
