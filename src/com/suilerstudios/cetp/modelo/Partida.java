@@ -40,6 +40,7 @@ public class Partida {
 
 					System.out.println("TURNO J1");
 
+					
 					System.out.println(ia.comprobarDato("color", Color.AZUL));
 //					System.out.println(ia.comprobarDato("color", Color.MARRON));
 //					System.out.println(ia.comprobarDato("color", Color.AMARILLO));
