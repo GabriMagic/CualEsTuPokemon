@@ -4,6 +4,7 @@ import com.suilerstudios.cetp.controller.TableroFichasController;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -23,6 +24,9 @@ public class CETPokemonApp extends Application {
 
 		primaryStage.setTitle("¿Cuál es tu Pokémon?");
 		primaryStage.setResizable(false);
+		
+		// carga de icono
+		primaryStage.getIcons().add(new Image("/com/suilerstudios/cetp/img/logo.png"));
 
 		primaryStage.setScene(pokemon);
 		primaryStage.show();
