@@ -20,8 +20,9 @@ public class Partida {
 		// IA
 		ia = new IA();
 
-//		ia.setPokemon(JsonFinder.getPokes().get((int) Math.floor(Math.random() * 24)));
-		 ia.setPokemon(JsonFinder.getPokes().get(14));
+		// ia.setPokemon(JsonFinder.getPokes().get((int)
+		// Math.floor(Math.random() * 24)));
+		ia.setPokemon(JsonFinder.getPokes().get(14));
 
 		/**
 		 * elegir poke
@@ -47,17 +48,17 @@ public class Partida {
 					System.out.println("TURNO J1");
 
 					System.out.println(ia.comprobarDato("color", Color.AZUL));
-					System.out.println(ia.comprobarDato("color", Color.MARRON));
-					System.out.println(ia.comprobarDato("color", Color.AMARILLO));
-//					ia.comprobarDato("tipo", Tipo.AGUA);
-//					ia.comprobarDato("tipo", Tipo.ELECTRICO);
-//					ia.comprobarDato("tipo", Tipo.BICHO);
-//					ia.comprobarDato("tipo", Tipo.NINGUNO);
+//					System.out.println(ia.comprobarDato("color", Color.MARRON));
+//					System.out.println(ia.comprobarDato("color", Color.AMARILLO));
+					// ia.comprobarDato("tipo", Tipo.AGUA);
+					// ia.comprobarDato("tipo", Tipo.ELECTRICO);
+					// ia.comprobarDato("tipo", Tipo.BICHO);
+					// ia.comprobarDato("tipo", Tipo.NINGUNO);
 					mutexTurno.release();
 					break;
 				default:
 					mutexTurno.acquire();
-					System.out.println("Turno J2");
+//					System.out.println("Turno J2");
 					mutexTurno.release();
 					break;
 				}

@@ -1,5 +1,6 @@
 package com.suilerstudios.cetp.modelo;
 
+import java.util.ConcurrentModificationException;
 import java.util.List;
 
 public class IA extends Jugador {
@@ -12,6 +13,7 @@ public class IA extends Jugador {
 	}
 
 	public boolean comprobarDato(String dato, Object c) {
+
 		System.out.println("PREGUNTO " + dato + " " + c + "\n\n");
 		boolean x = true;
 		Object aux = c;
@@ -75,29 +77,49 @@ public class IA extends Jugador {
 			System.out.println("CHAO PESCAO!");
 			break;
 		}
-		System.out.println("SIZE: " + listaPartidaPokes.size());
+		
+		for (Pokemon pokemon : listaPartidaPokes) {
+			System.out.println(pokemon.getNombre());
+		}
+		
 		return x;
 	}
 
 	private void flitrarPokemons(String dato, Object c, boolean x) {
 		switch (dato) {
 		case "color":
-			for (int i = 0; i < listaPartidaPokes.size(); i++) {
-				if (listaPartidaPokes.get(i).getColor() == c && x) {
+//			try {
+//				for (Pokemon pokemon : JsonFinder.getPokes()) {
+//					if (pokemon.getColor() == c && x) {
+//						listaPartidaPokes.remove(pokemon);
+//					}
+//				}
+//			} catch (ConcurrentModificationException e) {
+//				System.out.println("404");
+//			}
+			
+			try {
+				for (int i = 0; i < listaPartidaPokes.size(); i++) {
 					System.out.println(listaPartidaPokes.get(i));
-					listaPartidaPokes.remove(i);
-				} else if (listaPartidaPokes.get(i).getColor() != c && !x) {
-					System.out.println(listaPartidaPokes.get(i));
-					listaPartidaPokes.remove(i);
+					if (listaPartidaPokes.get(i).getColor() == c && !x) {
+						System.out.println("Eliminando a "+listaPartidaPokes.get(i));
+						listaPartidaPokes.remove(listaPartidaPokes.get(i));
+					} else if (listaPartidaPokes.get(i).getColor() != c && x) {
+						listaPartidaPokes.remove(i);
+					}
 				}
+
+			} catch (ConcurrentModificationException e) {
+				System.out.println("404");
 			}
+
+			
 			break;
 		case "tipo":
 			for (int i = 0; i < listaPartidaPokes.size(); i++) {
 				if (listaPartidaPokes.get(i).getTipo() == c && x) {
 					listaPartidaPokes.remove(i);
 				} else if (listaPartidaPokes.get(i).getTipo() != c && !x) {
-					System.out.println(listaPartidaPokes.get(i));
 					listaPartidaPokes.remove(i);
 				}
 			}

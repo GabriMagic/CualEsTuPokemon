@@ -8,8 +8,6 @@ public class Jugador {
 		pokemon = new Pokemon();
 	}
 
-	
-
 	public Pokemon getPokemon() {
 		return pokemon;
 	}

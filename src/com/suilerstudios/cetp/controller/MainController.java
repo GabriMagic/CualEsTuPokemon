@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.suilerstudios.cetp.modelo.JsonFinder;
+import com.suilerstudios.cetp.modelo.Partida;
 
 import javafx.stage.Stage;
 
@@ -28,7 +29,8 @@ public class MainController {
 			ventana.getTablero().getMain().getChildren().add(fichas.get(i).getView());
 
 		info.bind(fichas.get(0).getPokemon());
-
+		
+		Partida p = new Partida();
 	}
 
 	public TableroController getTablero() {

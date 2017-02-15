@@ -1,7 +1,6 @@
 package com.suilerstudios.cetp;
 
 import com.suilerstudios.cetp.controller.MainController;
-import com.suilerstudios.cetp.modelo.Partida;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -13,25 +12,21 @@ public class CETPokemonApp extends Application {
 
 	private MainController main;
 	private Scene pokemon;
-//	private PartidaController partidaController;
+	// private PartidaController partidaController;
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 
-	
 		primaryStage.initStyle(StageStyle.TRANSPARENT);
 		main = new MainController(primaryStage);
 		pokemon = new Scene(main.getVentana().getRoot());
 		pokemon.setFill(Color.TRANSPARENT);
 
-//		partidaController = new PartidaController();
-		Partida p = new Partida();
-
 		primaryStage.setTitle("¿Cuál es tu Pokémon?");
 		primaryStage.setResizable(false);
 
 		primaryStage.setScene(pokemon);
-		primaryStage.show();
+//		primaryStage.show();
 	}
 
 	public static void main(String[] args) {
