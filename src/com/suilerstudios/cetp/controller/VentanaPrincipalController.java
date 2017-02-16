@@ -80,7 +80,7 @@ public class VentanaPrincipalController {
 			System.out.println(p.getIa().getListaPartidaPokes().size());
 			
 			if (p.getIa().getListaPartidaPokes().size() == 1) {
-				p.getIa().comprobarDato("pokemon", p.getIa().getListaPartidaPokes().get(0));
+				System.out.println(p.getIa().getListaPartidaPokes().get(0));
 
 			}
 			
