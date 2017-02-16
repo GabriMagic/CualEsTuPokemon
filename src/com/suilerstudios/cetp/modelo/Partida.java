@@ -15,54 +15,67 @@ public class Partida {
 		j1 = new Jugador();
 		// IA
 		ia = new IA();
-
-		ia.setPokemon(JsonFinder.getPokes().get((int) Math.floor(Math.random() * 24)));
-		// ia.setPokemon(JsonFinder.getPokes().get(1));
-
+		
+		setPokemonJugador(JsonFinder.getPokes().get(teclado.nextInt() - 1));
+		setIaPokemon();
+		System.out.println(ia.getPokemon());
 		/**
 		 * elegir poke
 		 */
 
-		j1.setPokemon(JsonFinder.getPokes().get(teclado.nextInt() - 1));
-
-		System.out.println("J1:" + j1.getPokemon().getNombre());
-		System.out.println("IA:" + ia.getPokemon().getNombre());
-		System.out.println();
-		for (int i = 0; i < 2; i++) {
-
-			// TURNOS
-			switch (i % 2) {
-			case 0:
-
-				System.out.println("TURNO J1");
-
-				while (ia.getListaPartidaPokes().size() > 1) {
-					Object[][] pre = ia.generarPregunta();
-					System.out.println(ia.comprobarDato(pre[0][0].toString(), pre[0][1]));
-
-				}
-				ia.comprobarDato("pokemon", ia.getListaPartidaPokes().get(0));
-
-				// System.out.println(ia.comprobarDato("color", Color.MARRON));
-				// System.out.println(ia.comprobarDato("color",
-				// Color.AMARILLO));
-				// ia.comprobarDato("tipo", Tipo.AGUA);
-				// ia.comprobarDato("tipo", Tipo.ELECTRICO);
-				// ia.comprobarDato("tipo", Tipo.BICHO);
-				// ia.comprobarDato("tipo", Tipo.NINGUNO);
-				// ia.comprobarDato("evoluciones", Evoluciones.DOS);
-				// ia.comprobarDato("orejas", true);
-
-				break;
-			default:
-
-				break;
-			}
-
-		}
+		
+		
+//		for (int i = 0; i < 2; i++) {
+//
+//			// TURNOS
+//			switch (i % 2) {
+//			case 0:
+//
+//				System.out.println("TURNO J1");
+//
+//				while (ia.getListaPartidaPokes().size() > 1) {
+//					Object[][] pre = ia.generarPregunta();
+//					System.out.println(ia.comprobarDato(pre[0][0].toString(), pre[0][1]));
+//
+//				}
+//				ia.comprobarDato("pokemon", ia.getListaPartidaPokes().get(0));
+//
+//				// System.out.println(ia.comprobarDato("color", Color.MARRON));
+//				// System.out.println(ia.comprobarDato("color",
+//				// Color.AMARILLO));
+//				// ia.comprobarDato("tipo", Tipo.AGUA);
+//				// ia.comprobarDato("tipo", Tipo.ELECTRICO);
+//				// ia.comprobarDato("tipo", Tipo.BICHO);
+//				// ia.comprobarDato("tipo", Tipo.NINGUNO);
+//				// ia.comprobarDato("evoluciones", Evoluciones.DOS);
+//				// ia.comprobarDato("orejas", true);
+//
+//				break;
+//			default:
+//
+//				break;
+//			}
+//
+//		}
 
 	}
 
+	
+	
+	public String preguntaIA(){
+		
+		Object[][] pre = ia.generarPregunta();
+		String dato = "La pregunta es ¿" + pre[0][0].toString()+" "+ pre[0][1]+"?";
+		return dato;
+	}
+	
+	public void setPokemonJugador(Pokemon pokemon){
+		j1.setPokemon(pokemon);
+	}
+	
+	public void setIaPokemon(){
+		ia.setPokemon(JsonFinder.getPokes().get((int) Math.floor(Math.random() * 24)));
+	}
 	public IA getIa() {
 		return ia;
 	}

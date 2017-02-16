@@ -1,7 +1,6 @@
 package com.suilerstudios.cetp.modelo;
 
 import java.util.ArrayList;
-import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.List;
 
@@ -17,105 +16,63 @@ public class IA extends Jugador {
 
 	public boolean comprobarDato(String dato, Object c) {
 
-		System.out.println("PREGUNTO " + dato + " " + c );
+		
 		boolean x = true;
 
 		switch (dato) {
 		case "color":
-			if (getPokemon().getColor() == c) {
+			if (getPokemon().getColor() == Color.valueOf(c.toString().toUpperCase())) {
 				x = true;
-				System.out.println("ia: " + x);
-				flitrarPokemons(dato, c, x);
+				
 			} else {
 				x = false;
-				System.out.println("ia: " + x);
-				flitrarPokemons(dato, c, x);
+				
 			}
 			break;
 		case "tipo":
-			if (getPokemon().getTipo() == c) {
+			if (getPokemon().getTipo() == Tipo.valueOf(c.toString().toUpperCase())) {
 				x = true;
-				System.out.println("ia: " + x);
-				flitrarPokemons(dato, c, x);
 			} else {
 				x = false;
-				System.out.println("ia: " + x);
-				flitrarPokemons(dato, c, x);
 			}
 			break;
 		case "peso":
-			if (getPokemon().getPeso() == c) {
+			if (getPokemon().getPeso() == Peso.valueOf(c.toString().toUpperCase())) {
 				x = true;
-				System.out.println("ia: " + x);
-
-				flitrarPokemons(dato, c, x);
 			} else {
 				x = false;
-				System.out.println("ia: " + x);
-
-				flitrarPokemons(dato, c, x);
 			}
 			break;
 		case "evoluciones":
-			if (getPokemon().getEvoluciones() == c) {
+			if (getPokemon().getEvoluciones() == Evoluciones.valueOf(c.toString().toUpperCase())) {
 				x = true;
-				System.out.println("ia: " + x);
-
-				flitrarPokemons(dato, c, x);
 			} else {
 				x = false;
-				System.out.println("ia: " + x);
-
-				flitrarPokemons(dato, c, x);
 			}
 			break;
 		case "alas":
-			x = ((boolean) c == getPokemon().hasAlas());
-			System.out.println("ia: " + x);
-
-			flitrarPokemons(dato, c, x);
+			x = (Boolean.valueOf(c.toString()) == getPokemon().hasAlas());
 
 			break;
 		case "patas":
-			x = ((boolean) c == getPokemon().hasPatas());
-			System.out.println("ia: " + x);
-
-			flitrarPokemons(dato, c, x);
+			x = (Boolean.valueOf(c.toString()) == getPokemon().hasPatas());
 			break;
 		case "pico":
-			x = ((boolean) c == getPokemon().hasPico());
-			System.out.println("ia: " + x);
-
-			flitrarPokemons(dato, c, x);
+			x = (Boolean.valueOf(c.toString()) == getPokemon().hasPico());
 			break;
 		case "orejas":
-			x = ((boolean) c == getPokemon().hasOrejas());
-			System.out.println("ia: " + x);
-
-			flitrarPokemons(dato, c, x);
+			x = (Boolean.valueOf(c.toString()) == getPokemon().hasOrejas());
 			break;
 		case "manchas":
-			x = ((boolean) c == getPokemon().hasManchas());
-			System.out.println("ia: " + x);
-
-			flitrarPokemons(dato, c, x);
+			x = (Boolean.valueOf(c.toString()) == getPokemon().hasManchas());
 			break;
 		case "cola":
-			x = ((boolean) c == getPokemon().hasCola());
-			System.out.println("ia: " + x);
-
-			flitrarPokemons(dato, c, x);
+			x = (Boolean.valueOf(c.toString()) == getPokemon().hasCola());
 			break;
 		case "vuela":
-			x = ((boolean) c == getPokemon().canVuela());
-			System.out.println("ia: " + x);
-
-			flitrarPokemons(dato, c, x);
+			x = (Boolean.valueOf(c.toString()) == getPokemon().canVuela());
 			break;
-		case "pokemon":
-			Pokemon poke = (Pokemon) c;
-			System.out.println(resolver(poke));
-			break;
+	
 		default:
 			System.out.println("CHAO PESCAO!");
 			break;
@@ -128,19 +85,22 @@ public class IA extends Jugador {
 
 		return x;
 	}
+	public Boolean comprobarPokemon(Pokemon pokemon){
+		return getPokemon() == pokemon;
 
-	private void flitrarPokemons(String dato, Object c, boolean x) {
+	}
+	public void flitrarPokemons(String dato, Object c, boolean x) {
 		Iterator<Pokemon> it = listaPartidaPokes.iterator();
 		switch (dato) {
 		case "color":
 
 			while (it.hasNext()) {
 				Pokemon poke = it.next();
-				if (poke.getColor() != (Color) c && x) {
+				if (poke.getColor() != Color.valueOf(c.toString().toUpperCase())&& x) {
 
 					it.remove();
 
-				} else if (poke.getColor() == (Color) c && !x) {
+				} else if (poke.getColor() == Color.valueOf(c.toString().toUpperCase()) && !x) {
 					it.remove();
 				}
 			}
@@ -150,11 +110,11 @@ public class IA extends Jugador {
 
 			while (it.hasNext()) {
 				Pokemon poke = it.next();
-				if (poke.getTipo() != (Tipo) c && x) {
+				if (poke.getTipo() != Tipo.valueOf(c.toString().toUpperCase()) && x) {
 
 					it.remove();
 
-				} else if (poke.getTipo() == (Tipo) c && !x) {
+				} else if (poke.getTipo() == Tipo.valueOf(c.toString().toUpperCase()) && !x) {
 					it.remove();
 				}
 			}
@@ -163,11 +123,11 @@ public class IA extends Jugador {
 		case "peso":
 			while (it.hasNext()) {
 				Pokemon poke = it.next();
-				if (poke.getPeso() != (Peso) c && x) {
+				if (poke.getPeso() != Peso.valueOf(c.toString().toUpperCase()) && x) {
 
 					it.remove();
 
-				} else if (poke.getPeso() == (Peso) c && !x) {
+				} else if (poke.getPeso() == Peso.valueOf(c.toString().toUpperCase()) && !x) {
 					it.remove();
 				}
 			}
@@ -176,11 +136,11 @@ public class IA extends Jugador {
 		case "evoluciones":
 			while (it.hasNext()) {
 				Pokemon poke = it.next();
-				if (poke.getEvoluciones() != (Evoluciones) c && x) {
+				if (poke.getEvoluciones() != Evoluciones.valueOf(c.toString().toUpperCase()) && x) {
 
 					it.remove();
 
-				} else if (poke.getEvoluciones() == (Evoluciones) c && !x) {
+				} else if (poke.getEvoluciones() == Evoluciones.valueOf(c.toString().toUpperCase()) && !x) {
 					it.remove();
 				}
 			}
@@ -189,11 +149,11 @@ public class IA extends Jugador {
 		case "alas":
 			while (it.hasNext()) {
 				Pokemon poke = it.next();
-				if (poke.hasAlas() != (boolean) c && x) {
+				if (poke.hasAlas() !=  Boolean.valueOf(c.toString().toUpperCase()) && x) {
 
 					it.remove();
 
-				} else if (poke.hasAlas() == (boolean) c && !x) {
+				} else if (poke.hasAlas() == Boolean.valueOf(c.toString().toUpperCase())  && !x) {
 					it.remove();
 				}
 			}
@@ -202,11 +162,11 @@ public class IA extends Jugador {
 		case "patas":
 			while (it.hasNext()) {
 				Pokemon poke = it.next();
-				if (poke.hasPatas() != (boolean) c && x) {
+				if (poke.hasPatas() != Boolean.valueOf(c.toString().toUpperCase()) && x) {
 
 					it.remove();
 
-				} else if (poke.hasPatas() == (boolean) c && !x) {
+				} else if (poke.hasPatas() == Boolean.valueOf(c.toString().toUpperCase()) && !x) {
 					it.remove();
 				}
 			}
@@ -215,11 +175,11 @@ public class IA extends Jugador {
 		case "pico":
 			while (it.hasNext()) {
 				Pokemon poke = it.next();
-				if (poke.hasPico() != (boolean) c && x) {
+				if (poke.hasPico() != Boolean.valueOf(c.toString().toUpperCase()) && x) {
 
 					it.remove();
 
-				} else if (poke.hasPico() == (boolean) c && !x) {
+				} else if (poke.hasPico() == Boolean.valueOf(c.toString().toUpperCase()) && !x) {
 					it.remove();
 				}
 			}
@@ -228,11 +188,11 @@ public class IA extends Jugador {
 		case "orejas":
 			while (it.hasNext()) {
 				Pokemon poke = it.next();
-				if (poke.hasOrejas() != (boolean) c && x) {
+				if (poke.hasOrejas() != Boolean.valueOf(c.toString().toUpperCase()) && x) {
 
 					it.remove();
 
-				} else if (poke.hasOrejas() == (boolean) c && !x) {
+				} else if (poke.hasOrejas() == Boolean.valueOf(c.toString().toUpperCase()) && !x) {
 					it.remove();
 				}
 			}
@@ -241,11 +201,11 @@ public class IA extends Jugador {
 		case "manchas":
 			while (it.hasNext()) {
 				Pokemon poke = it.next();
-				if (poke.hasManchas() != (boolean) c && x) {
+				if (poke.hasManchas() != Boolean.valueOf(c.toString().toUpperCase()) && x) {
 
 					it.remove();
 
-				} else if (poke.hasManchas() == (boolean) c && !x) {
+				} else if (poke.hasManchas() == Boolean.valueOf(c.toString().toUpperCase()) && !x) {
 					it.remove();
 				}
 			}
@@ -254,11 +214,11 @@ public class IA extends Jugador {
 		case "cola":
 			while (it.hasNext()) {
 				Pokemon poke = it.next();
-				if (poke.hasCola() != (boolean) c && x) {
+				if (poke.hasCola() != Boolean.valueOf(c.toString().toUpperCase()) && x) {
 
 					it.remove();
 
-				} else if (poke.hasCola() == (boolean) c && !x) {
+				} else if (poke.hasCola() == Boolean.valueOf(c.toString().toUpperCase()) && !x) {
 					it.remove();
 				}
 			}
@@ -266,11 +226,11 @@ public class IA extends Jugador {
 		case "vuela":
 			while (it.hasNext()) {
 				Pokemon poke = it.next();
-				if (poke.canVuela() != (boolean) c && x) {
+				if (poke.canVuela() != Boolean.valueOf(c.toString().toUpperCase()) && x) {
 
 					it.remove();
 
-				} else if (poke.canVuela() == (boolean) c && !x) {
+				} else if (poke.canVuela() == Boolean.valueOf(c.toString().toUpperCase()) && !x) {
 					it.remove();
 				}
 			}

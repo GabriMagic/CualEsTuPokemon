@@ -14,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -32,10 +33,14 @@ public class JugadorComponent extends HBox {
 	private ComboBox<String> c1;
 
 	@FXML
-	private ComboBox<String> c2;
+	private ComboBox<Object> c2;
 
 	private ObservableList<String> datos;
 
+
+    @FXML
+    private Label preguntaLabel;
+    
 	public JugadorComponent() {
 
 		try {
@@ -122,4 +127,54 @@ public class JugadorComponent extends HBox {
 	public ImageView getImagePokemon() {
 		return imagePokemon;
 	}
+
+	public Button getPreguntarButton() {
+		return preguntarButton;
+	}
+
+	public void setPreguntarButton(Button preguntarButton) {
+		this.preguntarButton = preguntarButton;
+	}
+
+	public ComboBox<String> getC1() {
+		return c1;
+	}
+
+	public void setC1(ComboBox<String> c1) {
+		this.c1 = c1;
+	}
+
+	public ComboBox<Object> getC2() {
+		return c2;
+	}
+
+	public void setC2(ComboBox<Object> c2) {
+		this.c2 = c2;
+	}
+
+	public ObservableList<String> getDatos() {
+		return datos;
+	}
+
+	public void setDatos(ObservableList<String> datos) {
+		this.datos = datos;
+	}
+
+	public void setView(VBox view) {
+		this.view = view;
+	}
+
+	public void setImagePokemon(ImageView imagePokemon) {
+		this.imagePokemon = imagePokemon;
+	}
+
+	public Label getPreguntaLabel() {
+		return preguntaLabel;
+	}
+
+	public void setPreguntaLabel(Label preguntaLabel) {
+		this.preguntaLabel = preguntaLabel;
+	}
+	
+	
 }

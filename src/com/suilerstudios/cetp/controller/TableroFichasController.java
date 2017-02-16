@@ -30,7 +30,7 @@ public class TableroFichasController {
 
 		info.bind(fichas.get(0).getPokemon());
 		
-		Partida p = new Partida();
+		
 	}
 
 	public TableroController getTablero() {
