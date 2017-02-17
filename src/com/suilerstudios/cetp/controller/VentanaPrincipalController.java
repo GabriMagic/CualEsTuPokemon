@@ -22,9 +22,9 @@ public class VentanaPrincipalController {
 	private VMBox movimiento;
 	private InfoController info;
 	private JugadorComponent jugadorComponent;
-
-	public VentanaPrincipalController(Stage primaryStage) {
-
+	private Partida p;
+	public VentanaPrincipalController(Stage primaryStage, Partida p) {
+		this.p = p;
 		jugadorComponent = new JugadorComponent();
 		info = new InfoController();
 		root = new HBox();
@@ -50,7 +50,8 @@ public class VentanaPrincipalController {
 		root.getChildren().add(tablero.getMain());
 		root.getChildren().add(movimiento.getVMBox());
 
-		Partida p = new Partida();
+		jugadorComponent.getImagePokemon().setImage(new Image(getClass().getResourceAsStream("../img/"+p.getJ1().getPokemon().getCodigoPokemon()+".png")));
+		jugadorComponent.getLabelNombrePokemon().setText(p.getJ1().getPokemon().getNombre());
 		
 		jugadorComponent.getPreguntarButton().setOnAction(e->{
 			

@@ -11,7 +11,7 @@ public class MainController {
 	private Stage primaryStage;
 	public MainController(Stage primaryStage) {
 
-		ventana = new VentanaPrincipalController(primaryStage);
+		//ventana = new VentanaPrincipalController(primaryStage);
 		partida = new Partida();
 
 	

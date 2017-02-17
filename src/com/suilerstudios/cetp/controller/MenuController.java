@@ -3,13 +3,19 @@ package com.suilerstudios.cetp.controller;
 import java.io.IOException;
 
 import com.suilerstudios.cetp.component.SeleccionComponent;
+import com.suilerstudios.cetp.modelo.Partida;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class MenuController {
 
@@ -26,6 +32,8 @@ public class MenuController {
 	private Button salirButton;
 
 	private SeleccionComponent selectComponents ;
+	
+	private TableroFichasController main;
 	
 	public MenuController() {
 
@@ -45,8 +53,24 @@ public class MenuController {
 
 	@FXML
 	void onNuevoJuego(ActionEvent event) {
-
+		Scene pokemon;
+		Stage secondStage = new Stage();
+		secondStage.initStyle(StageStyle.TRANSPARENT);
 		
+		Partida p = new Partida();
+		p.setPokemonJugador(selectComponents.getPokemon());
+		main = new TableroFichasController(secondStage,p);
+		pokemon = new Scene(main.getVentana().getRoot());
+		pokemon.setFill(Color.TRANSPARENT);
+
+		secondStage.setTitle("¿Cuál es tu Pokémon?");
+		secondStage.setResizable(false);
+		
+		// carga de icono
+		secondStage.getIcons().add(new Image("/com/suilerstudios/cetp/img/logo.png"));
+
+		secondStage.setScene(pokemon);
+		secondStage.show();
 		
 	}
 

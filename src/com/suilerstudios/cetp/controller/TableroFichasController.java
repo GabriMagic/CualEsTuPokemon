@@ -12,13 +12,12 @@ public class TableroFichasController {
 
 	private VentanaPrincipalController ventana;
 	private List<FichaController> fichas;
-
+	private Partida p;
 	private InfoController info;
 
-	public TableroFichasController(Stage primaryStage) {
-		JsonFinder.generarListaPokemon();
-
-		ventana = new VentanaPrincipalController(primaryStage);
+	public TableroFichasController(Stage primaryStage, Partida p) {
+		this.p = p;
+		ventana = new VentanaPrincipalController(primaryStage, p);
 		fichas = new ArrayList<>();
 		info = ventana.getInfo();
 

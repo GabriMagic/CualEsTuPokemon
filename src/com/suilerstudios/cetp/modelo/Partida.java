@@ -9,55 +9,9 @@ public class Partida {
 	private Scanner teclado;
 
 	public Partida() {
-		System.out.println("Empieza la partida");
-		teclado = new Scanner(System.in);
-
 		j1 = new Jugador();
-		// IA
 		ia = new IA();
-		
-		setPokemonJugador(JsonFinder.getPokes().get(teclado.nextInt() - 1));
 		setIaPokemon();
-		System.out.println(ia.getPokemon());
-		/**
-		 * elegir poke
-		 */
-
-		
-		
-//		for (int i = 0; i < 2; i++) {
-//
-//			// TURNOS
-//			switch (i % 2) {
-//			case 0:
-//
-//				System.out.println("TURNO J1");
-//
-//				while (ia.getListaPartidaPokes().size() > 1) {
-//					Object[][] pre = ia.generarPregunta();
-//					System.out.println(ia.comprobarDato(pre[0][0].toString(), pre[0][1]));
-//
-//				}
-//				ia.comprobarDato("pokemon", ia.getListaPartidaPokes().get(0));
-//
-//				// System.out.println(ia.comprobarDato("color", Color.MARRON));
-//				// System.out.println(ia.comprobarDato("color",
-//				// Color.AMARILLO));
-//				// ia.comprobarDato("tipo", Tipo.AGUA);
-//				// ia.comprobarDato("tipo", Tipo.ELECTRICO);
-//				// ia.comprobarDato("tipo", Tipo.BICHO);
-//				// ia.comprobarDato("tipo", Tipo.NINGUNO);
-//				// ia.comprobarDato("evoluciones", Evoluciones.DOS);
-//				// ia.comprobarDato("orejas", true);
-//
-//				break;
-//			default:
-//
-//				break;
-//			}
-//
-//		}
-
 	}
 
 	

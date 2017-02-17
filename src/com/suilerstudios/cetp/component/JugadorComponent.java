@@ -39,6 +39,10 @@ public class JugadorComponent extends HBox {
 
 
     @FXML
+    private Label labelNombrePokemon;
+
+
+    @FXML
     private Label preguntaLabel;
     
 	public JugadorComponent() {
@@ -118,6 +122,11 @@ public class JugadorComponent extends HBox {
 	@FXML
 	void onResolver(ActionEvent event) {
 
+	}
+
+	
+	public Label getLabelNombrePokemon() {
+		return labelNombrePokemon;
 	}
 
 	public VBox getView() {

@@ -82,7 +82,7 @@ public class SeleccionComponent implements Initializable{
 
     }
 
-    private Pokemon getPokemon() {
+    public Pokemon getPokemon() {
     	return model.getPokemonActual();
 	}
 	@Override

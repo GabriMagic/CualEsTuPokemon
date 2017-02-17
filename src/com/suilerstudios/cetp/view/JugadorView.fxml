@@ -22,7 +22,7 @@
                         <Image url="@../img/140.png" />
                      </image>
                   </ImageView>
-                  <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" text="Bulbasaur" textAlignment="CENTER" textFill="WHITE">
+                  <Label fx:id="labelNombrePokemon" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" text="Bulbasaur" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font size="21.0" />
                      </font>

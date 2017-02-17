@@ -1,5 +1,6 @@
 package com.suilerstudios.cetp;
 
+import com.suilerstudios.cetp.controller.MenuController;
 import com.suilerstudios.cetp.controller.TableroFichasController;
 import com.suilerstudios.cetp.modelo.JsonFinder;
 
@@ -15,13 +16,14 @@ public class CETPokemonApp extends Application {
 	
 	private Scene pokemon;
 
+	private MenuController menu;
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		JsonFinder.generarListaPokemon();
-		
+		menu = new MenuController();
 		primaryStage.initStyle(StageStyle.TRANSPARENT);
-		main = new TableroFichasController(primaryStage);
-		pokemon = new Scene(main.getVentana().getRoot());
+		
+		pokemon = new Scene(menu.getRoot());
 		pokemon.setFill(Color.TRANSPARENT);
 
 		primaryStage.setTitle("¿Cuál es tu Pokémon?");
