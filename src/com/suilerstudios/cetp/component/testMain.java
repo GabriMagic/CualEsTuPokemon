@@ -1,5 +1,6 @@
 package com.suilerstudios.cetp.component;
 
+import com.suilerstudios.cetp.controller.MenuController;
 import com.suilerstudios.cetp.modelo.JsonFinder;
 
 import javafx.application.Application;
@@ -13,8 +14,8 @@ public class testMain extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		JsonFinder.generarListaPokemon();
-		SeleccionComponent s = new SeleccionComponent();
-		primaryStage.setScene(new Scene(s.getRoot()));
+		MenuController con = new MenuController();
+		primaryStage.setScene(new Scene(con.getRoot()));
 		primaryStage.show();
 		
 		

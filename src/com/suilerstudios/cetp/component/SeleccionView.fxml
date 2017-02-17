@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="260.0" prefWidth="357.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+<HBox fx:id="root" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="260.0" prefWidth="357.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button fx:id="anteriorButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAnteriorButton" prefHeight="404.0" prefWidth="44.0" text="&lt;" />
+      <Button fx:id="anteriorButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAnteriorButton" prefWidth="44.0" text="&lt;" />
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
             <ImageView fx:id="pokemonAnteriorImage" fitHeight="73.0" fitWidth="52.0" pickOnBounds="true">
@@ -42,6 +42,6 @@
             </ImageView>
          </children>
       </HBox>
-      <Button fx:id="siguienteButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onSiguienteButton" prefHeight="260.0" prefWidth="40.0" text="&gt;" />
+      <Button fx:id="siguienteButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onSiguienteButton" prefWidth="40.0" text="&gt;" />
    </children>
 </HBox>

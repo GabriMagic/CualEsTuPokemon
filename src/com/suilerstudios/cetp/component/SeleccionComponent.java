@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.suilerstudios.cetp.modelo.JsonFinder;
+import com.suilerstudios.cetp.modelo.Pokemon;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -81,6 +82,9 @@ public class SeleccionComponent implements Initializable{
 
     }
 
+    private Pokemon getPokemon() {
+    	return model.getPokemonActual();
+	}
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub

@@ -1,6 +1,7 @@
 package com.suilerstudios.cetp;
 
 import com.suilerstudios.cetp.controller.TableroFichasController;
+import com.suilerstudios.cetp.modelo.JsonFinder;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -11,12 +12,13 @@ import javafx.stage.StageStyle;
 
 public class CETPokemonApp extends Application {
 
-	private TableroFichasController main;
+	
 	private Scene pokemon;
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-
+		JsonFinder.generarListaPokemon();
+		
 		primaryStage.initStyle(StageStyle.TRANSPARENT);
 		main = new TableroFichasController(primaryStage);
 		pokemon = new Scene(main.getVentana().getRoot());
