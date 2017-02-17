@@ -75,7 +75,7 @@ public class VentanaPrincipalController {
 			Alert alert = new Alert(AlertType.CONFIRMATION);
 			alert.setTitle("Confirmation Dialog");
 			alert.setHeaderText("Look, a Confirmation Dialog");
-			alert.setContentText("Es" + biObj[0][0] + " "+ biObj[0][1]);
+			alert.setContentText("¿" + biObj[0][0] + " "+ biObj[0][1]+" ?");
 
 			Optional<ButtonType> result = alert.showAndWait();
 			if (result.get() == ButtonType.OK){
@@ -91,8 +91,8 @@ public class VentanaPrincipalController {
 
 				Alert alerta = new Alert(AlertType.INFORMATION);
 				alerta.setTitle("Tu pokemon es");
-				alerta.setHeaderText("Look, a Confirmation Dialog");
-				alerta.setContentText(p.getIa().getListaPartidaPokes().get(0)+"");
+				alerta.setHeaderText("HAS PERDIDO");
+				alerta.setContentText(p.getIa().getListaPartidaPokes().get(0).getNombre()+"");
 
 				alerta.showAndWait();
 				primaryStage.close();
@@ -116,12 +116,11 @@ public class VentanaPrincipalController {
 		r.getAceptarButton().setOnAction(e->{
 			Alert alerta = new Alert(AlertType.INFORMATION);
 			alerta.setTitle("Tu pokemon es");
-			alerta.setHeaderText("Look, a Confirmation Dialog");
 			
 			if(p.getIa().resolver(r.getSc().getPokemon())){
 				alerta.setContentText("HAS GANADO");	
 			}else{
-				alerta.setContentText("Has PERDIDO");
+				alerta.setContentText("HAS PERDIDO");
 			}
 			alerta.showAndWait();
 			resolverStage.close();
