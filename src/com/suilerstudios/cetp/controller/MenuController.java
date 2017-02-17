@@ -35,8 +35,9 @@ public class MenuController {
 	
 	private TableroFichasController main;
 	
-	public MenuController() {
-
+	private Stage primaryStage;
+	public MenuController(Stage primaryStage) {
+		this.primaryStage = primaryStage;
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/MenuView.fxml"));
 			loader.setController(this);
@@ -71,12 +72,12 @@ public class MenuController {
 
 		secondStage.setScene(pokemon);
 		secondStage.show();
-		
+		primaryStage.close();
 	}
 
 	@FXML
 	void onSalir(ActionEvent event) {
-
+	
 	}
 
 	public BorderPane getRoot() {

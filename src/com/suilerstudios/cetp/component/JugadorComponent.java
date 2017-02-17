@@ -43,6 +43,10 @@ public class JugadorComponent extends HBox {
 
 
     @FXML
+    private Button resolverButton;
+
+
+    @FXML
     private Label preguntaLabel;
     
 	public JugadorComponent() {
@@ -183,6 +187,10 @@ public class JugadorComponent extends HBox {
 
 	public void setPreguntaLabel(Label preguntaLabel) {
 		this.preguntaLabel = preguntaLabel;
+	}
+
+	public Button getResolverButton() {
+		return resolverButton;
 	}
 	
 	

@@ -6,6 +6,7 @@ import com.suilerstudios.cetp.component.JugadorComponent;
 import com.suilerstudios.cetp.modelo.Partida;
 import com.suilerstudios.moverVentanaComponent.controller.VMBox;
 
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
@@ -13,6 +14,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class VentanaPrincipalController {
@@ -28,7 +30,11 @@ public class VentanaPrincipalController {
 		jugadorComponent = new JugadorComponent();
 		info = new InfoController();
 		root = new HBox();
-
+		
+		Stage st = new Stage();
+		MenuController sc = new MenuController(st);
+		st.setScene(new Scene(sc.getRoot()));
+		
 		ImageView logo = new ImageView();
 		logo.setFitWidth(25);
 		logo.setFitHeight(25);
@@ -89,11 +95,41 @@ public class VentanaPrincipalController {
 				alerta.setContentText(p.getIa().getListaPartidaPokes().get(0)+"");
 
 				alerta.showAndWait();
+				primaryStage.close();
+				st.show();
 			}
 			
 			
 		});
 		
+		
+		Stage resolverStage = new Stage();
+		Scene scenePokemon = new Scene(new VBox());
+		resolverStage.setScene(scenePokemon);
+		RespuestaController r = new RespuestaController();
+			jugadorComponent.getResolverButton().setOnAction(e->{
+				
+				scenePokemon.setRoot(r.getRoot());
+				resolverStage.showAndWait();
+				
+			});
+		r.getAceptarButton().setOnAction(e->{
+			Alert alerta = new Alert(AlertType.INFORMATION);
+			alerta.setTitle("Tu pokemon es");
+			alerta.setHeaderText("Look, a Confirmation Dialog");
+			
+			if(p.getIa().resolver(r.getSc().getPokemon())){
+				alerta.setContentText("HAS GANADO");	
+			}else{
+				alerta.setContentText("Has PERDIDO");
+			}
+			alerta.showAndWait();
+			resolverStage.close();
+			primaryStage.close();
+			
+			st.show();
+
+		});
 	}
 
 	public TableroController getTablero() {

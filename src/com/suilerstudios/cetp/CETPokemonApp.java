@@ -20,7 +20,7 @@ public class CETPokemonApp extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		JsonFinder.generarListaPokemon();
-		menu = new MenuController();
+		menu = new MenuController(primaryStage);
 		primaryStage.initStyle(StageStyle.TRANSPARENT);
 		
 		pokemon = new Scene(menu.getRoot());
