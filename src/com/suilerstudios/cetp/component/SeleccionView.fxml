@@ -1,19 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.GaussianBlur?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="260.0" prefWidth="357.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Button" />
-      <ImageView fitHeight="410.0" fitWidth="370.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="../img/24.png" />
-         </image>
-      </ImageView>
-      <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Button" />
+      <Button fx:id="anteriorButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAnteriorButton" prefHeight="404.0" prefWidth="44.0" text="&lt;" />
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <ImageView fx:id="pokemonAnteriorImage" fitHeight="73.0" fitWidth="52.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../img/15.png" />
+               </image>
+               <effect>
+                  <GaussianBlur />
+               </effect>
+            </ImageView>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label fx:id="nombrePokemon" alignment="CENTER" maxWidth="1.7976931348623157E308" text="Nombre del pokemon" />
+                  <ImageView fx:id="actualPokemonImage" fitHeight="324.0" fitWidth="156.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/22.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+            <ImageView fx:id="siguientePokemonImage" fitHeight="68.0" fitWidth="66.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../img/25.png" />
+               </image>
+               <effect>
+                  <GaussianBlur />
+               </effect>
+            </ImageView>
+         </children>
+      </HBox>
+      <Button fx:id="siguienteButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onSiguienteButton" prefHeight="260.0" prefWidth="40.0" text="&gt;" />
    </children>
-</VBox>
+</HBox>

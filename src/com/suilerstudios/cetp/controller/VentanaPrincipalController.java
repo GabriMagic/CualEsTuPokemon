@@ -67,7 +67,7 @@ public class VentanaPrincipalController {
 			Alert alert = new Alert(AlertType.CONFIRMATION);
 			alert.setTitle("Confirmation Dialog");
 			alert.setHeaderText("Look, a Confirmation Dialog");
-			alert.setContentText(biObj[0][0] + " "+ biObj[0][1]);
+			alert.setContentText("Es" + biObj[0][0] + " "+ biObj[0][1]);
 
 			Optional<ButtonType> result = alert.showAndWait();
 			if (result.get() == ButtonType.OK){
