@@ -63,7 +63,8 @@ public class VentanaPrincipalController {
 				obj = false;
 			}
 			
-			System.out.println(p.getIa().comprobarDato(jugadorComponent.getC1().getValue().toLowerCase(), obj));
+			jugadorComponent.getPreguntaLabel().setText("¿"+ jugadorComponent.getC1().getValue()+" "+jugadorComponent.getC2().getValue()+ "? "+p.getIa().comprobarDato(jugadorComponent.getC1().getValue().toLowerCase(), obj));
+			
 			Object[][] biObj = p.getIa().generarPregunta();
 			Alert alert = new Alert(AlertType.CONFIRMATION);
 			alert.setTitle("Confirmation Dialog");
@@ -81,8 +82,13 @@ public class VentanaPrincipalController {
 			System.out.println(p.getIa().getListaPartidaPokes().size());
 			
 			if (p.getIa().getListaPartidaPokes().size() == 1) {
-				System.out.println(p.getIa().getListaPartidaPokes().get(0));
 
+				Alert alerta = new Alert(AlertType.INFORMATION);
+				alerta.setTitle("Tu pokemon es");
+				alerta.setHeaderText("Look, a Confirmation Dialog");
+				alerta.setContentText(p.getIa().getListaPartidaPokes().get(0)+"");
+
+				alerta.showAndWait();
 			}
 			
 			
