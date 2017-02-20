@@ -77,7 +77,7 @@ public class MenuController {
 
 	@FXML
 	void onSalir(ActionEvent event) {
-	
+		primaryStage.close();
 	}
 
 	public BorderPane getRoot() {

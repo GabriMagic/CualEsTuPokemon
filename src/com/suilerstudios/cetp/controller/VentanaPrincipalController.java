@@ -16,6 +16,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class VentanaPrincipalController {
 
@@ -33,6 +34,7 @@ public class VentanaPrincipalController {
 		
 		Stage st = new Stage();
 		MenuController sc = new MenuController(st);
+		st.initStyle(StageStyle.TRANSPARENT);
 		st.setScene(new Scene(sc.getRoot()));
 		
 		ImageView logo = new ImageView();
@@ -93,6 +95,17 @@ public class VentanaPrincipalController {
 				alerta.setTitle("Tu pokemon es");
 				alerta.setHeaderText("HAS PERDIDO");
 				alerta.setContentText(p.getIa().getListaPartidaPokes().get(0).getNombre()+"");
+
+				alerta.showAndWait();
+				primaryStage.close();
+				st.show();
+			}
+			 else if(p.getIa().getListaPartidaPokes().size() == 0) {
+
+				Alert alerta = new Alert(AlertType.INFORMATION);
+				alerta.setTitle("MENTIROSO");
+				alerta.setHeaderText("ME HAS MENTIDO");
+				alerta.setContentText("SERE UNA IA QUE REPITE PREGUNTAS PERO NO SOY TONTA... GTFO! VETE DE AQUI CON TU FUCKING "+ p.getJ1().getPokemon().getNombre().toUpperCase() + " \"¬_¬ ");
 
 				alerta.showAndWait();
 				primaryStage.close();

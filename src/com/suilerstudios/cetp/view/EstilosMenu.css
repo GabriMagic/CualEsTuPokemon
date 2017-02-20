@@ -1,3 +1,4 @@
 .fondo{
 	-fx-background-image: url(../img/background.png);  
+	-fx-background-size: cover;
 }
