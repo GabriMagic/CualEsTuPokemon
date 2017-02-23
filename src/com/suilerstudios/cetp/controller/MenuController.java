@@ -17,6 +17,15 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+/**
+ * © 2017 Suiler Studios
+ * 
+ * @author Xilerth
+ * @author GabriMagic
+ * @author LordOxikran
+ * @author Civix
+ *
+ */
 public class MenuController {
 
 	@FXML
@@ -31,11 +40,12 @@ public class MenuController {
 	@FXML
 	private Button salirButton;
 
-	private SeleccionComponent selectComponents ;
-	
+	private SeleccionComponent selectComponents;
+
 	private TableroFichasController main;
-	
+
 	private Stage primaryStage;
+
 	public MenuController(Stage primaryStage) {
 		this.primaryStage = primaryStage;
 		try {
@@ -43,13 +53,11 @@ public class MenuController {
 			loader.setController(this);
 			root = loader.load();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 		selectComponents = new SeleccionComponent();
-		
-		menuVbox.getChildren().add(0,selectComponents.getRoot());
+		menuVbox.getChildren().add(0, selectComponents.getRoot());
 	}
 
 	@FXML
@@ -57,16 +65,16 @@ public class MenuController {
 		Scene pokemon;
 		Stage secondStage = new Stage();
 		secondStage.initStyle(StageStyle.TRANSPARENT);
-		
+
 		Partida p = new Partida();
 		p.setPokemonJugador(selectComponents.getPokemon());
-		main = new TableroFichasController(secondStage,p);
+		main = new TableroFichasController(secondStage, p);
 		pokemon = new Scene(main.getVentana().getRoot());
 		pokemon.setFill(Color.TRANSPARENT);
 
 		secondStage.setTitle("¿Cuál es tu Pokémon?");
 		secondStage.setResizable(false);
-		
+
 		// carga de icono
 		secondStage.getIcons().add(new Image("/com/suilerstudios/cetp/img/logo.png"));
 
@@ -95,7 +103,5 @@ public class MenuController {
 	public Button getSalirButton() {
 		return salirButton;
 	}
-
-
 
 }

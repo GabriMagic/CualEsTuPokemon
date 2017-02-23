@@ -6,7 +6,11 @@ import com.suilerstudios.cetp.utils.SoundPlayer;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -15,13 +19,12 @@ public class CETPokemonApp extends Application {
 
 	private SoundPlayer intro;
 	private Scene pokemon;
-
+	private Alert alerta;
 	private MenuController menu;
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		JsonFinder.generarListaPokemon();
-
 		intro = new SoundPlayer(getClass().getResourceAsStream("/com/suilerstudios/cetp/sounds/intro.mp3"));
 		intro.start();
 
@@ -39,6 +42,22 @@ public class CETPokemonApp extends Application {
 
 		primaryStage.setScene(pokemon);
 		primaryStage.show();
+
+		primaryStage.setOnCloseRequest(e -> {
+			alerta = new Alert(AlertType.CONFIRMATION);
+
+			ImageView a = new ImageView(getClass().getResource("/com/suilerstudios/cetp/img/logo.png").toString());
+			a.setFitWidth(80);
+			a.setFitHeight(80);
+			alerta.setGraphic(a);
+			alerta.setTitle("Salir");
+			alerta.setHeaderText("Está a punto de salir del juego.");
+			alerta.setContentText("¿Desea salir del juego?");
+			if (alerta.showAndWait().get() == ButtonType.CANCEL) {
+				e.consume();
+			}
+		});
+
 	}
 
 	@SuppressWarnings("deprecation")

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
@@ -10,12 +11,18 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="root" prefHeight="718.0" prefWidth="1081.0" styleClass="fondo" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="root" prefHeight="718.0" prefWidth="1081.0" styleClass="fondo" stylesheets="/com/suilerstudios/cetp/view/EstilosMenu.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <VBox fx:id="menuVbox" alignment="CENTER" prefHeight="687.0" prefWidth="1061.0" spacing="5.0" styleClass="fondo" stylesheets="@EstilosMenu.css" BorderPane.alignment="CENTER">
+      <VBox fx:id="menuVbox" alignment="CENTER" prefHeight="687.0" prefWidth="1061.0" spacing="5.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="nuevoJuegoButton" alignment="CENTER" mnemonicParsing="false" onAction="#onNuevoJuego" text="Nuevo Juego" />
-            <Button fx:id="salirButton" alignment="CENTER" mnemonicParsing="false" onAction="#onSalir" text="Salir" />
+            <Button fx:id="nuevoJuegoButton" alignment="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#onNuevoJuego" text="Nuevo Juego">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="salirButton" alignment="CENTER" cancelButton="true" mnemonicParsing="false" onAction="#onSalir" prefWidth="86.0" text="Salir">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
          </children>
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -23,7 +30,7 @@
       </VBox>
    </center>
    <bottom>
-      <Label alignment="CENTER_RIGHT" text="© 2017 Suiler Studios" textAlignment="RIGHT" textFill="WHITE" BorderPane.alignment="CENTER">
+      <Label text="© 2017 Suiler Studios" textFill="WHITE" BorderPane.alignment="CENTER_LEFT">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
