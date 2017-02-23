@@ -43,7 +43,6 @@ public class CETPokemonApp extends Application {
 
 	@SuppressWarnings("deprecation")
 	@Override
-	
 	public void stop() throws Exception {
 		super.stop();
 		intro.stop();
