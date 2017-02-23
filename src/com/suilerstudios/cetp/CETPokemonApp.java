@@ -40,10 +40,11 @@ public class CETPokemonApp extends Application {
 		primaryStage.show();
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Override
 	public void stop() throws Exception {
-		intro.stop();
 		super.stop();
+		intro.stop();
 	}
 
 	public static void main(String[] args) {
