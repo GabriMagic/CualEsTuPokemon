@@ -58,7 +58,7 @@ public class InfoController {
 	public InfoController() {
 
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/infoPokemon.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/suilerstudios/cetp/view/infoPokemon.fxml"));
 			loader.setController(this);
 			main = loader.load();
 
@@ -74,7 +74,7 @@ public class InfoController {
 		
 		nombreLabel.textProperty().set(pokemon.getNombre());
 		pokemonImagen.imageProperty().set(
-				new Image(getClass().getResource("../img/" + pokemon.getCodigoPokemon() + ".png").toExternalForm()));
+				new Image(getClass().getResource("/com/suilerstudios/cetp/img/" + pokemon.getCodigoPokemon() + ".png").toExternalForm()));
 		colorLabel.textProperty().set(pokemon.getColor().toString());
 		tipoLabel.textProperty().set(pokemon.getTipo().toString());
 		pesoLabel.textProperty().set(pokemon.getPeso().toString());

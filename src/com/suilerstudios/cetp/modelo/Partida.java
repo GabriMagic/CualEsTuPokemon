@@ -1,12 +1,9 @@
 package com.suilerstudios.cetp.modelo;
 
-import java.util.Scanner;
-
 public class Partida {
 
 	private Jugador j1;
 	private IA ia;
-	private Scanner teclado;
 
 	public Partida() {
 		j1 = new Jugador();
@@ -14,22 +11,21 @@ public class Partida {
 		setIaPokemon();
 	}
 
-	
-	
-	public String preguntaIA(){
-		
+	public String preguntaIA() {
+
 		Object[][] pre = ia.generarPregunta();
-		String dato = "La pregunta es ¿" + pre[0][0].toString()+" "+ pre[0][1]+"?";
+		String dato = "La pregunta es ¿" + pre[0][0].toString() + " " + pre[0][1] + "?";
 		return dato;
 	}
-	
-	public void setPokemonJugador(Pokemon pokemon){
+
+	public void setPokemonJugador(Pokemon pokemon) {
 		j1.setPokemon(pokemon);
 	}
-	
-	public void setIaPokemon(){
+
+	public void setIaPokemon() {
 		ia.setPokemon(JsonFinder.getPokes().get((int) Math.floor(Math.random() * 24)));
 	}
+
 	public IA getIa() {
 		return ia;
 	}

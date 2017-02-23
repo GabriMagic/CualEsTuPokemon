@@ -39,7 +39,7 @@ public class MenuController {
 	public MenuController(Stage primaryStage) {
 		this.primaryStage = primaryStage;
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/MenuView.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/suilerstudios/cetp/view/MenuView.fxml"));
 			loader.setController(this);
 			root = loader.load();
 		} catch (IOException e) {

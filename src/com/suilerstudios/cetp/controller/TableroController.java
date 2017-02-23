@@ -16,7 +16,7 @@ public class TableroController {
     public TableroController() {
 
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/TableroView.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/suilerstudios/cetp/view/TableroView.fxml"));
 			loader.setController(this);
 			main=loader.load();
 			

@@ -52,7 +52,7 @@ public class JugadorComponent extends HBox {
 	public JugadorComponent() {
 
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/JugadorView.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/suilerstudios/cetp/view/JugadorView.fxml"));
 			loader.setController(this);
 			view = loader.load();
 		} catch (IOException e) {

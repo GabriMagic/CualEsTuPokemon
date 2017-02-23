@@ -38,7 +38,7 @@ public class FichaController implements Initializable {
 		this.info = info;
 		estado = 0;
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/FichaView.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/suilerstudios/cetp/view/FichaView.fxml"));
 			loader.setController(this);
 			view = loader.load();
 
@@ -48,7 +48,7 @@ public class FichaController implements Initializable {
 
 		nomPokemon.textProperty().set(pokemon.getNombre());
 		imgPokemon.imageProperty().set(
-				new Image(getClass().getResource("../img/" + pokemon.getCodigoPokemon() + ".png").toExternalForm()));
+				new Image(getClass().getResource("/com/suilerstudios/cetp/img/" + pokemon.getCodigoPokemon() + ".png").toExternalForm()));
 
 	}
 
@@ -71,11 +71,11 @@ public class FichaController implements Initializable {
 			if (estado == 1) {
 				estado = 0;
 				imgPokemon.imageProperty().set(new Image(
-						getClass().getResource("../img/" + pokemon.getCodigoPokemon() + ".png").toExternalForm()));
+						getClass().getResource("/com/suilerstudios/cetp/img/" + pokemon.getCodigoPokemon() + ".png").toExternalForm()));
 			} else if (estado == 0) {
 				estado = 1;
 				imgPokemon.imageProperty().set(new Image(getClass()
-						.getResource("../img/" + pokemon.getCodigoPokemon() + "Silueta.png").toExternalForm()));
+						.getResource("/com/suilerstudios/cetp/img/" + pokemon.getCodigoPokemon() + "Silueta.png").toExternalForm()));
 			}
 
 		}

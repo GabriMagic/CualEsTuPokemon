@@ -56,9 +56,9 @@ public class SeleccionComponent implements Initializable{
     	model = new SeleccionModel();
     	
     	nombrePokemon.setText(model.getPokemonActual().getNombre());
-    	actualPokemonImage.setImage(new Image(getClass().getResourceAsStream("../img/"+model.getPokemonActual().getCodigoPokemon()+".png")));
-    	siguientePokemonImage.setImage(new Image(getClass().getResourceAsStream("../img/"+JsonFinder.getPokes().get(model.getAuxSiguiente()).getCodigoPokemon()+".png")));
-    	pokemonAnteriorImage.setImage(new Image(getClass().getResourceAsStream("../img/"+JsonFinder.getPokes().get(model.getAuxAnterior()).getCodigoPokemon()+".png")));
+    	actualPokemonImage.setImage(new Image(getClass().getResourceAsStream("/com/suilerstudios/cetp/img/"+model.getPokemonActual().getCodigoPokemon()+".png")));
+    	siguientePokemonImage.setImage(new Image(getClass().getResourceAsStream("/com/suilerstudios/cetp/img/"+JsonFinder.getPokes().get(model.getAuxSiguiente()).getCodigoPokemon()+".png")));
+    	pokemonAnteriorImage.setImage(new Image(getClass().getResourceAsStream("/com/suilerstudios/cetp/img/"+JsonFinder.getPokes().get(model.getAuxAnterior()).getCodigoPokemon()+".png")));
     	
     }
 
@@ -66,9 +66,9 @@ public class SeleccionComponent implements Initializable{
     void onAnteriorButton(ActionEvent event) {
     	model.Retroceder();
     	nombrePokemon.setText(model.getPokemonActual().getNombre());
-    	actualPokemonImage.setImage(new Image(getClass().getResourceAsStream("../img/"+model.getPokemonActual().getCodigoPokemon()+".png")));
-    	siguientePokemonImage.setImage(new Image(getClass().getResourceAsStream("../img/"+JsonFinder.getPokes().get(model.getAuxSiguiente()).getCodigoPokemon()+".png")));
-    	pokemonAnteriorImage.setImage(new Image(getClass().getResourceAsStream("../img/"+JsonFinder.getPokes().get(model.getAuxAnterior()).getCodigoPokemon()+".png")));
+    	actualPokemonImage.setImage(new Image(getClass().getResourceAsStream("/com/suilerstudios/cetp/img/"+model.getPokemonActual().getCodigoPokemon()+".png")));
+    	siguientePokemonImage.setImage(new Image(getClass().getResourceAsStream("/com/suilerstudios/cetp/img/"+JsonFinder.getPokes().get(model.getAuxSiguiente()).getCodigoPokemon()+".png")));
+    	pokemonAnteriorImage.setImage(new Image(getClass().getResourceAsStream("/com/suilerstudios/cetp/img/"+JsonFinder.getPokes().get(model.getAuxAnterior()).getCodigoPokemon()+".png")));
 
     }
 
@@ -76,9 +76,9 @@ public class SeleccionComponent implements Initializable{
     void onSiguienteButton(ActionEvent event) {
     	model.Avanzar();
     	nombrePokemon.setText(model.getPokemonActual().getNombre());
-    	actualPokemonImage.setImage(new Image(getClass().getResourceAsStream("../img/"+model.getPokemonActual().getCodigoPokemon()+".png")));
-    	siguientePokemonImage.setImage(new Image(getClass().getResourceAsStream("../img/"+JsonFinder.getPokes().get(model.getAuxSiguiente()).getCodigoPokemon()+".png")));
-    	pokemonAnteriorImage.setImage(new Image(getClass().getResourceAsStream("../img/"+JsonFinder.getPokes().get(model.getAuxAnterior()).getCodigoPokemon()+".png")));
+    	actualPokemonImage.setImage(new Image(getClass().getResourceAsStream("/com/suilerstudios/cetp/img/"+model.getPokemonActual().getCodigoPokemon()+".png")));
+    	siguientePokemonImage.setImage(new Image(getClass().getResourceAsStream("/com/suilerstudios/cetp/img/"+JsonFinder.getPokes().get(model.getAuxSiguiente()).getCodigoPokemon()+".png")));
+    	pokemonAnteriorImage.setImage(new Image(getClass().getResourceAsStream("/com/suilerstudios/cetp/img/"+JsonFinder.getPokes().get(model.getAuxAnterior()).getCodigoPokemon()+".png")));
 
     }
 

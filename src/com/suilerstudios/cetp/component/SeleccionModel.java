@@ -1,7 +1,5 @@
 package com.suilerstudios.cetp.component;
 
-import java.util.Iterator;
-
 import com.suilerstudios.cetp.modelo.JsonFinder;
 import com.suilerstudios.cetp.modelo.Pokemon;
 

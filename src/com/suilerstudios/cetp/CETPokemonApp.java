@@ -1,8 +1,8 @@
 package com.suilerstudios.cetp;
 
 import com.suilerstudios.cetp.controller.MenuController;
-import com.suilerstudios.cetp.controller.TableroFichasController;
 import com.suilerstudios.cetp.modelo.JsonFinder;
+import com.suilerstudios.cetp.utils.SoundPlayer;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -13,13 +13,17 @@ import javafx.stage.StageStyle;
 
 public class CETPokemonApp extends Application {
 
-	
+	private SoundPlayer intro;
 	private Scene pokemon;
 
 	private MenuController menu;
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		JsonFinder.generarListaPokemon();
+		
+		intro = new SoundPlayer(getClass().getResourceAsStream("/com/suilerstudios/cetp/sounds/intro.mp3"));
+		intro.start();
+		
 		menu = new MenuController(primaryStage);
 		primaryStage.initStyle(StageStyle.TRANSPARENT);
 		
@@ -34,6 +38,12 @@ public class CETPokemonApp extends Application {
 
 		primaryStage.setScene(pokemon);
 		primaryStage.show();
+	}
+	
+	@Override
+	public void stop() throws Exception {
+		intro.stop();
+		super.stop();
 	}
 
 	public static void main(String[] args) {

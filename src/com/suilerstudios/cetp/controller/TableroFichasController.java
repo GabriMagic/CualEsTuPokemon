@@ -12,11 +12,9 @@ public class TableroFichasController {
 
 	private VentanaPrincipalController ventana;
 	private List<FichaController> fichas;
-	private Partida p;
 	private InfoController info;
 
 	public TableroFichasController(Stage primaryStage, Partida p) {
-		this.p = p;
 		ventana = new VentanaPrincipalController(primaryStage, p);
 		fichas = new ArrayList<>();
 		info = ventana.getInfo();
@@ -28,8 +26,7 @@ public class TableroFichasController {
 			ventana.getTablero().getMain().getChildren().add(fichas.get(i).getView());
 
 		info.bind(fichas.get(0).getPokemon());
-		
-		
+
 	}
 
 	public TableroController getTablero() {
