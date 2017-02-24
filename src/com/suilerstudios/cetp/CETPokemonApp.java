@@ -53,6 +53,7 @@ public class CETPokemonApp extends Application {
 			alerta.setTitle("Salir");
 			alerta.setHeaderText("Está a punto de salir del juego.");
 			alerta.setContentText("¿Desea salir del juego?");
+			alerta.initOwner(primaryStage);
 			if (alerta.showAndWait().get() == ButtonType.CANCEL) {
 				e.consume();
 			}
