@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -10,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<GridPane fx:id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="208.0" prefWidth="517.0" style="-fx-border-color: black; -fx-border-width: 0 0 2 0;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane fx:id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="208.0" prefWidth="517.0" style="-fx-border-color: black; -fx-border-width: 0 0 2 0;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
   <columnConstraints>
       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="246.0" minWidth="10.0" prefWidth="177.0" />
     <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="195.0" minWidth="6.0" prefWidth="90.0" />
@@ -92,26 +93,6 @@
          <padding>
             <Insets left="5.0" right="5.0" />
          </padding></Label>
-      <Label fx:id="alasLabel" maxWidth="1.7976931348623157E308" text="Label" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="4">
-         <padding>
-            <Insets left="5.0" right="5.0" />
-         </padding></Label>
-      <Label fx:id="orejasLabel" maxWidth="1.7976931348623157E308" text="Label" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="2">
-         <padding>
-            <Insets left="5.0" right="5.0" />
-         </padding></Label>
-      <Label fx:id="manchasLabel" maxWidth="1.7976931348623157E308" text="Label" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="3">
-         <padding>
-            <Insets left="5.0" right="5.0" />
-         </padding></Label>
-      <Label fx:id="colaLabel" maxWidth="1.7976931348623157E308" text="Label" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="4">
-         <padding>
-            <Insets left="5.0" right="5.0" />
-         </padding></Label>
-      <Label fx:id="vuelaLabel" maxWidth="1.7976931348623157E308" text="Label" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="5">
-         <padding>
-            <Insets left="5.0" right="5.0" />
-         </padding></Label>
       <VBox alignment="CENTER" prefHeight="204.0" prefWidth="173.0" GridPane.halignment="CENTER" GridPane.rowSpan="11" GridPane.valignment="CENTER">
          <children>
             <Label fx:id="nombreLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="21.0" prefWidth="248.0" text="Label" textAlignment="CENTER" textFill="WHITE">
@@ -125,15 +106,12 @@
             </ImageView>
          </children>
       </VBox>
-      <Label fx:id="patasLabel" maxWidth="1.7976931348623157E308" text="Label" textFill="WHITE" GridPane.columnIndex="4">
-         <padding>
-            <Insets left="5.0" right="5.0" />
-         </padding>
-      </Label>
-      <Label fx:id="picoLabel" maxWidth="1.7976931348623157E308" text="Label" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="1">
-         <padding>
-            <Insets left="5.0" right="5.0" />
-         </padding>
-      </Label>
+      <CheckBox fx:id="alasCheckBox" disable="true" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+      <CheckBox fx:id="vuelaCheckBox" disable="true" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+      <CheckBox fx:id="patasCheckBox" disable="true" mnemonicParsing="false" GridPane.columnIndex="4" />
+      <CheckBox fx:id="picoCheckBox" disable="true" mnemonicParsing="false" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+      <CheckBox fx:id="orejasCheckBox" disable="true" mnemonicParsing="false" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+      <CheckBox fx:id="manchasCheckBox" disable="true" mnemonicParsing="false" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+      <CheckBox fx:id="colaCheckBox" disable="true" mnemonicParsing="false" GridPane.columnIndex="4" GridPane.rowIndex="4" />
    </children>
 </GridPane>

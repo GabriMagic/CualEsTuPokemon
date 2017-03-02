@@ -6,6 +6,7 @@ import com.suilerstudios.cetp.modelo.Pokemon;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -15,6 +16,9 @@ public class InfoController {
 
 	@FXML
 	private GridPane main;
+
+	@FXML
+	private Label nombreLabel;
 
 	@FXML
 	private Label colorLabel;
@@ -29,28 +33,46 @@ public class InfoController {
 	private Label evolucionesLabel;
 
 	@FXML
-	private Label alasLabel;
+	private CheckBox alasCheckBox;
 
 	@FXML
-	private Label patasLabel;
+	private CheckBox vuelaCheckBox;
 
 	@FXML
-	private Label picoLabel;
+	private CheckBox patasCheckBox;
 
 	@FXML
-	private Label orejasLabel;
+	private CheckBox picoCheckBox;
 
 	@FXML
-	private Label manchasLabel;
+	private CheckBox orejasCheckBox;
 
 	@FXML
-	private Label colaLabel;
+	private CheckBox manchasCheckBox;
 
 	@FXML
-	private Label vuelaLabel;
-
-	@FXML
-	private Label nombreLabel;
+	private CheckBox colaCheckBox;
+	// @FXML
+	// private Label alasLabel;
+	//
+	// @FXML
+	// private Label patasLabel;
+	//
+	// @FXML
+	// private Label picoLabel;
+	//
+	// @FXML
+	// private Label orejasLabel;
+	//
+	// @FXML
+	// private Label manchasLabel;
+	//
+	// @FXML
+	// private Label colaLabel;
+	//
+	// @FXML
+	// private Label vuelaLabel;
+	//
 
 	@FXML
 	private ImageView pokemonImagen;
@@ -70,23 +92,21 @@ public class InfoController {
 
 	public void bind(Pokemon pokemon) {
 
-	
-		
 		nombreLabel.textProperty().set(pokemon.getNombre());
-		pokemonImagen.imageProperty().set(
-				new Image(getClass().getResource("/com/suilerstudios/cetp/img/" + pokemon.getCodigoPokemon() + ".png").toExternalForm()));
+		pokemonImagen.imageProperty().set(new Image(getClass()
+				.getResource("/com/suilerstudios/cetp/img/" + pokemon.getCodigoPokemon() + ".png").toExternalForm()));
 		colorLabel.textProperty().set(pokemon.getColor().toString());
 		tipoLabel.textProperty().set(pokemon.getTipo().toString());
 		pesoLabel.textProperty().set(pokemon.getPeso().toString());
 		evolucionesLabel.textProperty().set(pokemon.getEvoluciones().toString());
-		alasLabel.textProperty().set(pokemon.hasAlas() + "");
-		patasLabel.textProperty().set(pokemon.hasPatas() + "");
-		picoLabel.textProperty().set(pokemon.hasPico() + "");
-		orejasLabel.textProperty().set(pokemon.hasOrejas() + "");
-		manchasLabel.textProperty().set(pokemon.hasManchas() + "");
-		colaLabel.textProperty().set(pokemon.hasCola() + "");
-		vuelaLabel.textProperty().set(pokemon.canVuela() + "");
 
+		alasCheckBox.setSelected(pokemon.hasAlas());
+		patasCheckBox.setSelected(pokemon.hasPatas());
+		picoCheckBox.setSelected(pokemon.hasPico());
+		orejasCheckBox.setSelected(pokemon.hasOrejas());
+		manchasCheckBox.setSelected(pokemon.hasOrejas());
+		colaCheckBox.setSelected(pokemon.hasCola());
+		vuelaCheckBox.setSelected(pokemon.canVuela());
 	}
 
 	public GridPane getMain() {
