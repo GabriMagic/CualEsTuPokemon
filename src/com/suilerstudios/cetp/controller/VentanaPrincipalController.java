@@ -13,6 +13,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -80,25 +81,28 @@ public class VentanaPrincipalController {
 			 */
 			jugadorComponent.getPreguntarButton().setVisible(false);
 			jugadorComponent.getPasarTurnoButton().setVisible(true);
+
 		});
 
 		Stage resolverStage = new Stage();
 		Scene scenePokemon = new Scene(new VBox());
 		resolverStage.setScene(scenePokemon);
 		RespuestaController r = new RespuestaController();
-		
+
 		jugadorComponent.getResolverButton().setOnAction(e -> {
 			scenePokemon.setRoot(r.getRoot());
 			resolverStage.showAndWait();
 		});
 
 		jugadorComponent.getPasarTurnoButton().setOnAction(e -> {
+			jugadorComponent.getPasarTurnoButton().setVisible(false);
 			alert = new Alert(AlertType.CONFIRMATION);
+			alert.initModality(Modality.NONE);
 			alert.setTitle("Confirmación");
 			alert.setHeaderText("¿Es cierto?");
 			biObj = p.getIa().generarPregunta();
 			alert.setContentText("¿" + biObj[0][0] + " " + biObj[0][1] + " ?");
-			
+
 			if (alert.showAndWait().get() == ButtonType.OK) {
 				p.getIa().flitrarPokemons(biObj[0][0].toString(), biObj[0][1], true);
 			} else {
@@ -134,8 +138,8 @@ public class VentanaPrincipalController {
 			/**
 			 * A BOUND CANNOT BE SET
 			 */
+
 			jugadorComponent.getPreguntarButton().setVisible(true);
-			jugadorComponent.getPasarTurnoButton().setVisible(false);
 		});
 
 		r.getAceptarButton().setOnAction(e -> {
