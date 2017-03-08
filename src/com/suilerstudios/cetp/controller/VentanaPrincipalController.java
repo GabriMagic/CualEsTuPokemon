@@ -25,6 +25,8 @@ public class VentanaPrincipalController {
 	private VMBox movimiento;
 	private InfoController info;
 	private JugadorComponent jugadorComponent;
+	private Alert alert;
+	private Object[][] biObj;
 
 	public VentanaPrincipalController(Stage primaryStage, Partida p) {
 		jugadorComponent = new JugadorComponent();
@@ -75,12 +77,29 @@ public class VentanaPrincipalController {
 					.setText("¿" + jugadorComponent.getC1().getValue() + " " + jugadorComponent.getC2().getValue()
 							+ "? " + p.getIa().comprobarDato(jugadorComponent.getC1().getValue().toLowerCase(), obj));
 
-			Object[][] biObj = p.getIa().generarPregunta();
-			Alert alert = new Alert(AlertType.CONFIRMATION);
-			alert.setTitle("Confirmation Dialog");
-			alert.setHeaderText("Look, a Confirmation Dialog");
+			biObj = p.getIa().generarPregunta();
+			alert = new Alert(AlertType.CONFIRMATION);
+			alert.setTitle("Confirmación");
+			alert.setHeaderText("¿Es cierto?");
 			alert.setContentText("¿" + biObj[0][0] + " " + biObj[0][1] + " ?");
+			/**
+			 * A BOUND CANNOT BE SET
+			 */
+			jugadorComponent.getPreguntarButton().setDisable(false);
+		});
 
+		Stage resolverStage = new Stage();
+		Scene scenePokemon = new Scene(new VBox());
+		resolverStage.setScene(scenePokemon);
+		RespuestaController r = new RespuestaController();
+		jugadorComponent.getResolverButton().setOnAction(e -> {
+
+			scenePokemon.setRoot(r.getRoot());
+			resolverStage.showAndWait();
+
+		});
+
+		jugadorComponent.getPasarTurnoButton().setOnAction(e -> {
 			Optional<ButtonType> result = alert.showAndWait();
 			if (result.get() == ButtonType.OK) {
 				p.getIa().flitrarPokemons(biObj[0][0].toString(), biObj[0][1], true);
@@ -114,19 +133,12 @@ public class VentanaPrincipalController {
 				primaryStage.close();
 				st.show();
 			}
-
+			/**
+			 * A BOUND CANNOT BE SET
+			 */
+			jugadorComponent.getPreguntarButton().setDisable(true);
 		});
 
-		Stage resolverStage = new Stage();
-		Scene scenePokemon = new Scene(new VBox());
-		resolverStage.setScene(scenePokemon);
-		RespuestaController r = new RespuestaController();
-		jugadorComponent.getResolverButton().setOnAction(e -> {
-
-			scenePokemon.setRoot(r.getRoot());
-			resolverStage.showAndWait();
-
-		});
 		r.getAceptarButton().setOnAction(e -> {
 			Alert alerta = new Alert(AlertType.INFORMATION);
 			alerta.setTitle("Tu pokemon es");

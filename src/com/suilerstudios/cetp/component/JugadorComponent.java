@@ -37,18 +37,18 @@ public class JugadorComponent extends HBox {
 
 	private ObservableList<String> datos;
 
+	@FXML
+	private Label labelNombrePokemon;
 
-    @FXML
-    private Label labelNombrePokemon;
+	@FXML
+	private Button resolverButton;
 
+	@FXML
+	private Button pasarTurnoButton;
 
-    @FXML
-    private Button resolverButton;
+	@FXML
+	private Label preguntaLabel;
 
-
-    @FXML
-    private Label preguntaLabel;
-    
 	public JugadorComponent() {
 
 		try {
@@ -119,6 +119,11 @@ public class JugadorComponent extends HBox {
 	}
 
 	@FXML
+	void onPasarTurno(ActionEvent event) {
+
+	}
+
+	@FXML
 	void onPreguntar(ActionEvent event) {
 
 	}
@@ -128,6 +133,9 @@ public class JugadorComponent extends HBox {
 
 	}
 
+	public Button getPasarTurnoButton() {
+		return pasarTurnoButton;
+	}
 	
 	public Label getLabelNombrePokemon() {
 		return labelNombrePokemon;
@@ -192,6 +200,5 @@ public class JugadorComponent extends HBox {
 	public Button getResolverButton() {
 		return resolverButton;
 	}
-	
-	
+
 }
