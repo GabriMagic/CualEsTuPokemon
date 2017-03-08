@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import javafx.collections.FXCollections;
+
 public class IA extends Jugador {
 
 	private List<Pokemon> listaPartidaPokes;
@@ -16,17 +18,16 @@ public class IA extends Jugador {
 
 	public boolean comprobarDato(String dato, Object c) {
 
-		
 		boolean x = true;
 
 		switch (dato) {
 		case "color":
 			if (getPokemon().getColor() == Color.valueOf(c.toString().toUpperCase())) {
 				x = true;
-				
+
 			} else {
 				x = false;
-				
+
 			}
 			break;
 		case "tipo":
@@ -72,7 +73,7 @@ public class IA extends Jugador {
 		case "vuela":
 			x = (Boolean.valueOf(c.toString()) == getPokemon().canVuela());
 			break;
-	
+
 		default:
 			System.out.println("CHAO PESCAO!");
 			break;
@@ -85,10 +86,12 @@ public class IA extends Jugador {
 
 		return x;
 	}
-	public Boolean comprobarPokemon(Pokemon pokemon){
+
+	public Boolean comprobarPokemon(Pokemon pokemon) {
 		return getPokemon() == pokemon;
 
 	}
+
 	public void flitrarPokemons(String dato, Object c, boolean x) {
 		Iterator<Pokemon> it = listaPartidaPokes.iterator();
 		switch (dato) {
@@ -96,7 +99,7 @@ public class IA extends Jugador {
 
 			while (it.hasNext()) {
 				Pokemon poke = it.next();
-				if (poke.getColor() != Color.valueOf(c.toString().toUpperCase())&& x) {
+				if (poke.getColor() != Color.valueOf(c.toString().toUpperCase()) && x) {
 
 					it.remove();
 
@@ -149,11 +152,11 @@ public class IA extends Jugador {
 		case "alas":
 			while (it.hasNext()) {
 				Pokemon poke = it.next();
-				if (poke.hasAlas() !=  Boolean.valueOf(c.toString().toUpperCase()) && x) {
+				if (poke.hasAlas() != Boolean.valueOf(c.toString().toUpperCase()) && x) {
 
 					it.remove();
 
-				} else if (poke.hasAlas() == Boolean.valueOf(c.toString().toUpperCase())  && !x) {
+				} else if (poke.hasAlas() == Boolean.valueOf(c.toString().toUpperCase()) && !x) {
 					it.remove();
 				}
 			}
@@ -242,16 +245,25 @@ public class IA extends Jugador {
 			System.out.println("CHAO PESCAO!");
 			break;
 		}
-		/*
-		 * Object[][] obj =generarPregunta();
-		 * System.out.println("la ia pregunta: " + obj[0][0]+
-		 * " propiedad "+obj[0][1]+"?");
-		 */
 
 	}
 
+	List<Integer> listaIA = new ArrayList<Integer>(
+			FXCollections.observableArrayList(0, 0, 0, 1, 1, 1, 2, 3, 3, 4, 5, 6, 7, 8, 9, 10));
+
 	public Object[][] generarPregunta() {
-		int pregunta = (int) Math.floor(Math.random() * 11);
+
+		if (listaIA.size() == 0) {
+			listaIA = new ArrayList<Integer>(
+					FXCollections.observableArrayList(0, 0, 0, 1, 1, 1, 2, 3, 3, 4, 5, 6, 7, 8, 9, 10));
+
+		}
+
+		int aux = (int) Math.floor(Math.random() * listaIA.size());
+		int pregunta = listaIA.get(aux);
+
+		System.out.println("PREGUNTA Nº" + aux);
+
 		Object salida = "";
 		Object[][] obj = new Object[2][2];
 		switch (pregunta) {
@@ -311,6 +323,9 @@ public class IA extends Jugador {
 			obj[0][1] = salida;
 			break;
 		}
+
+		listaIA.remove(aux);
+		System.out.println(listaIA.size());
 		return obj;
 	}
 
