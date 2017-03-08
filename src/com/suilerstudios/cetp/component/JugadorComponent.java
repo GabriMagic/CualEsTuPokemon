@@ -114,8 +114,7 @@ public class JugadorComponent extends HBox {
 			}
 		});
 
-		preguntarButton.disableProperty().bind(c1.valueProperty().isNull().and(c2.valueProperty().isNull()));
-
+		preguntarButton.disableProperty().bind(c2.valueProperty().isNull());
 	}
 
 	@FXML
@@ -136,7 +135,7 @@ public class JugadorComponent extends HBox {
 	public Button getPasarTurnoButton() {
 		return pasarTurnoButton;
 	}
-	
+
 	public Label getLabelNombrePokemon() {
 		return labelNombrePokemon;
 	}

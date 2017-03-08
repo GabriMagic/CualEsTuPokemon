@@ -1,7 +1,5 @@
 package com.suilerstudios.cetp.controller;
 
-import java.util.Optional;
-
 import com.suilerstudios.cetp.component.JugadorComponent;
 import com.suilerstudios.cetp.modelo.Partida;
 import com.suilerstudios.moverVentanaComponent.controller.VMBox;
@@ -77,31 +75,31 @@ public class VentanaPrincipalController {
 					.setText("¿" + jugadorComponent.getC1().getValue() + " " + jugadorComponent.getC2().getValue()
 							+ "? " + p.getIa().comprobarDato(jugadorComponent.getC1().getValue().toLowerCase(), obj));
 
-			biObj = p.getIa().generarPregunta();
-			alert = new Alert(AlertType.CONFIRMATION);
-			alert.setTitle("Confirmación");
-			alert.setHeaderText("¿Es cierto?");
-			alert.setContentText("¿" + biObj[0][0] + " " + biObj[0][1] + " ?");
 			/**
 			 * A BOUND CANNOT BE SET
 			 */
-			jugadorComponent.getPreguntarButton().setDisable(false);
+			jugadorComponent.getPreguntarButton().setVisible(false);
+			jugadorComponent.getPasarTurnoButton().setVisible(true);
 		});
 
 		Stage resolverStage = new Stage();
 		Scene scenePokemon = new Scene(new VBox());
 		resolverStage.setScene(scenePokemon);
 		RespuestaController r = new RespuestaController();
+		
 		jugadorComponent.getResolverButton().setOnAction(e -> {
-
 			scenePokemon.setRoot(r.getRoot());
 			resolverStage.showAndWait();
-
 		});
 
 		jugadorComponent.getPasarTurnoButton().setOnAction(e -> {
-			Optional<ButtonType> result = alert.showAndWait();
-			if (result.get() == ButtonType.OK) {
+			alert = new Alert(AlertType.CONFIRMATION);
+			alert.setTitle("Confirmación");
+			alert.setHeaderText("¿Es cierto?");
+			biObj = p.getIa().generarPregunta();
+			alert.setContentText("¿" + biObj[0][0] + " " + biObj[0][1] + " ?");
+			
+			if (alert.showAndWait().get() == ButtonType.OK) {
 				p.getIa().flitrarPokemons(biObj[0][0].toString(), biObj[0][1], true);
 			} else {
 				p.getIa().flitrarPokemons(biObj[0][0].toString(), biObj[0][1], false);
@@ -136,7 +134,8 @@ public class VentanaPrincipalController {
 			/**
 			 * A BOUND CANNOT BE SET
 			 */
-			jugadorComponent.getPreguntarButton().setDisable(true);
+			jugadorComponent.getPreguntarButton().setVisible(true);
+			jugadorComponent.getPasarTurnoButton().setVisible(false);
 		});
 
 		r.getAceptarButton().setOnAction(e -> {
