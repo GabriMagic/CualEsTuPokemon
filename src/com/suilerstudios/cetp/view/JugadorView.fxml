@@ -51,7 +51,7 @@
       <Label fx:id="preguntaLabel" alignment="CENTER" maxWidth="1.7976931348623157E308" textFill="WHITE" VBox.vgrow="ALWAYS" />
       <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
          <children>
-            <Button fx:id="pasarTurnoButton" mnemonicParsing="false" onAction="#onPasarTurno" prefHeight="25.0" prefWidth="363.0" text="Pasar turno" />
+            <Button fx:id="pasarTurnoButton" mnemonicParsing="false" onAction="#onPasarTurno" prefHeight="25.0" prefWidth="363.0" text="Pasar turno" visible="false" />
             <Button fx:id="resolverButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onResolver" prefHeight="25.0" prefWidth="345.0" text="Resolver">
                <cursor>
                   <Cursor fx:constant="HAND" />
